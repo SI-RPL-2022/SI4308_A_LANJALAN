@@ -11,6 +11,6 @@ class travel_agent extends Model
     protected $guarded = ['id'];
 
     public function wisata(){
-        return $this->belongsTo(wisata::class);
+        return $this->hasMany(wisata::class);
     }
 }

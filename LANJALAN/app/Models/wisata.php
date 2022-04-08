@@ -11,12 +11,12 @@ class wisata extends Model
     protected $guarded = ['id'];
 
     public function pesanan(){
-        return $this->hasMany(pesanan::class);
+        return $this->belongsTo(pesanan::class);
     }
     public function travel_agent(){
-        return $this->hasMany(travel_agent::class);
+        return $this->belongsTo(travel_agent::class);
     }
     public function bundle(){
-        return $this->hasMany(bundle::class);
+        return $this->belongsTo(bundle::class);
     }
 }
