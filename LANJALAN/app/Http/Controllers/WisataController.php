@@ -23,4 +23,7 @@ class WisataController extends Controller
 
         ]);
     }
+
+    
+
 }

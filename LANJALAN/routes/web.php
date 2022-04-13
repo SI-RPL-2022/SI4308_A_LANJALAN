@@ -18,5 +18,9 @@ Route::get('/dashboard', function () {
     return view('dashboard\dash');
 });
 
+Route::get('/wisatadetail', function () {
+    return view('dashboard\wisata\detailwisata');
+});
+
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
 Route::get('/wisatapost', [WisataController::class, 'wisatapost']);
