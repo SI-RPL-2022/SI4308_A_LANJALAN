@@ -17,7 +17,7 @@
          <?php 
          ?>
             <div class="mb-3">
-                <label for="id" class="form-label fw-bold">ID Travel Agen :</label>
+                <label for="id" class="form-label fw-bold">ID Travel Agen wisata :</label>
                 <p>andra</p>
             </div>
             <div class="mb-3">
