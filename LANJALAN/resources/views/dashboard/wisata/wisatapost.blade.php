@@ -1,11 +1,17 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+
 <div class="pt-5">
 <h2>Wisata Post</h2>
 <div class="mt-3 mb-3">
-<a href="/" class="btn btn-primary">Tambah Post Wisata</a>
+<a href="{{ route('wisatas.create') }}" class="btn btn-primary">Tambah Post Wisata</a>
 </div>
+@if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
 @if ($wisatas->count())
 {{-- card --}}
             <div class="flex-wrap justify-content-center d-flex py-3">

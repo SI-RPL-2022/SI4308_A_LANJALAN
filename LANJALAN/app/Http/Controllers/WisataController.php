@@ -23,6 +23,25 @@ class WisataController extends Controller
 
         ]);
     }
+    public function create()
+    {
+        return view('dashboard.wisata.create');
+    }
+  
+    public function store(Request $request)
+    {
+        $request->validate([
+            'namaWisata' => 'required',
+            'hargaWisata' => 'required',
+            'deskripsiWisata' => 'required',
+            'lokasiWisata' => 'required',
+            
+        ]);
+      
+        wisata::create($request->all());
+       
+        return redirect('/wisatapost')->with('success','Wisata created successfully.');
+    }
 
     
 

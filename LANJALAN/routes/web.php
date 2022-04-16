@@ -39,3 +39,5 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('editor', AdminController::class);
     });
 });
+
+Route::resource('wisatas', WisataController::class);
