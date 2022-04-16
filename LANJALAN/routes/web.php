@@ -25,6 +25,7 @@ Route::get('/wisatadetail', function () {
 
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
 Route::get('/wisatapost', [WisataController::class, 'wisatapost']);
+Route::get('/wisatapost/{id}', [WisataController::class, 'delete'])->name('delete');
 
 Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
 // Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');

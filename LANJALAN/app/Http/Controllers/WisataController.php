@@ -40,9 +40,13 @@ class WisataController extends Controller
       
         wisata::create($request->all());
        
-        return redirect('/wisatapost')->with('success','Wisata created successfully.');
+        return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditambahkan');
     }
 
-    
+    public function delete($id) {
+        $wisata = wisata::find($id);
+        $wisata->delete();
+        return redirect('/wisatapost')->with('success','Objek wisata berhasil dihapus');
+    }
 
 }

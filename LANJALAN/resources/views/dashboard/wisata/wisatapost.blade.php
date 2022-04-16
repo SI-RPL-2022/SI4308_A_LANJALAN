@@ -30,7 +30,7 @@
                                     <a href="">
                                         <button class="btn btn-warning">Edit</button>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('delete', ['id' => $p->id]) }}">
                                         <button class="btn btn-danger">Delete</button>
                                     </a>
                                 </div>
