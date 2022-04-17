@@ -23,6 +23,16 @@ class WisataController extends Controller
 
         ]);
     }
+
+    public function wisatadetail($id){
+
+        return view('dashboard.wisata.detailwisata', [
+            "title" => "Detail Wisata",
+            "detailwisata" => wisata::findOrFail($id)
+    
+        ]);
+    }
+
     public function create()
     {
         return view('dashboard.wisata.create');
@@ -43,7 +53,7 @@ class WisataController extends Controller
         return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditambahkan');
     }
 
-    public function delete($id) {
+    public function deletewisata($id) {
         $wisata = wisata::find($id);
         $wisata->delete();
         return redirect('/wisatapost')->with('success','Objek wisata berhasil dihapus');

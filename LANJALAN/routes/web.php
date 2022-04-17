@@ -3,6 +3,7 @@
 use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TravelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,22 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard\dash');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard\dash');
+// });
 
-Route::get('/wisatadetail', function () {
-    return view('dashboard\wisata\detailwisata');
-});
-
+//admin -> wisata
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
 Route::get('/wisatapost', [WisataController::class, 'wisatapost']);
-Route::get('/wisatapost/{id}', [WisataController::class, 'delete'])->name('delete');
+Route::get('/detailwisata/{id}', [WisataController::class, 'wisatadetail']);
+Route::get('/wisatapost/{id}', [WisataController::class, 'deletewisata'])->name('deletewisata');
+
+//admin -> travel agent
+Route::get('/travelpost', [TravelController::class, 'travelpost']);
+Route::get('/detailtravel/{id}', [TravelController::class, 'traveldetail']);
+Route::get('/travelpost/{id}', [TravelController::class, 'deletetravelpost'])->name('deletetravelpost');
+
+
 
 Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
 // Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');

@@ -18,7 +18,7 @@
                 @foreach ($wisatas as $p)
                     
                 <div class="mx-2 my-2">
-                    <a href="/detailwisata/" class="text-decoration-none link-dark">
+                    <a href="/detailwisata/{{ $p->id }}" class="text-decoration-none link-dark">
                         <div class="card " style="width: 14rem;">
                             <img src="img/papuma.jpg" class="card-img-top  imgcard" alt="">
                             <div class="card-body">
@@ -30,7 +30,7 @@
                                     <a href="">
                                         <button class="btn btn-warning">Edit</button>
                                     </a>
-                                    <a href="{{ route('delete', ['id' => $p->id]) }}">
+                                    <a href="{{ route('deletewisata', ['id' => $p->id]) }}">
                                         <button class="btn btn-danger">Delete</button>
                                     </a>
                                 </div>
