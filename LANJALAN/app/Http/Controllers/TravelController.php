@@ -29,4 +29,22 @@ class TravelController extends Controller
         $travel->delete();
         return redirect('/travelpost')->with('success','Travel Agent berhasil dihapus');
     }
+
+    public function create()
+    {
+        return view('dashboard.travel.create');
+    }
+  
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+      
+        travel_agent::create($request->all());
+       
+        return redirect('/travelpost')->with('success','Travel created successfully.');
+    }
 }

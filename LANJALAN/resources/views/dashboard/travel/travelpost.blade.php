@@ -4,7 +4,7 @@
 <div class="pt-5">
 <h2>Travel Post</h2>
 <div class="mt-3 mb-3">
-<a href="/" class="btn btn-primary">Tambah Post Travel</a>
+<a href="{{ route('travels.create') }}" class="btn btn-primary">Tambah Travel Agen</a>
 </div>
 @if ($message = Session::get('success'))
         <div class="alert alert-success">
