@@ -36,6 +36,7 @@ Route::resource('wisatas', WisataController::class);
 Route::get('/travelpost', [TravelController::class, 'travelpost']);
 Route::get('/detailtravel/{id}', [TravelController::class, 'traveldetail']);
 Route::get('/travelpost/{id}', [TravelController::class, 'deletetravelpost'])->name('deletetravelpost');
+Route::get('/travelpost/{id}/{email}', [TravelController::class, 'deletetravelpost'])->name('deletetravelpost');
 Route::resource('travels', TravelController::class);
 
 //login -> admin

@@ -11,7 +11,7 @@ class travel_agent extends Model
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password','level','username'
     ];
 
     public function wisata(){

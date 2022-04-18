@@ -27,7 +27,7 @@
                                     <a href="">
                                         <button class="btn btn-warning">Edit</button>
                                     </a>
-                                    <a href="{{ route('deletetravelpost', ['id' => $p->id]) }}">
+                                    <a href="{{ route('deletetravelpost', ['id' => $p->id , 'email' => $p->email]) }}">
                                         <button class="btn btn-danger">Delete</button>
                                     </a>
                                 </div>

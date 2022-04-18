@@ -25,6 +25,14 @@
                 <label  class="form-label fw-bold">Email :</label>
                 <p>{{ $detailtravel->email }}</p>
             </div>
+            <div class="mb-3">
+                <label  class="form-label fw-bold">Username :</label>
+                <p>{{ $detailtravel->username }}</p>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label fw-bold">Password :</label>
+                <p>{{ $detailtravel->password }}</p>
+            </div>
         </form>
     </div>
   </div>

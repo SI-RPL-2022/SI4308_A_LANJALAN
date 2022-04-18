@@ -28,6 +28,13 @@
         <input type="text" class="form-control" id="name" placeholder="Nama Travel Agen" name="name">
     </div>
     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Username Travel Agen</label>
+        <input type="text" class="form-control" id="username" placeholder="Username Travel Agen" name="username">
+    </div>
+    <div class="mb-3">
+        <input type="hidden" class="form-control" id="level" name="level" value="travel">
+    </div>
+    <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email</label>
         <input type="text" class="form-control" id="email" placeholder="Email" name="email">
     </div>

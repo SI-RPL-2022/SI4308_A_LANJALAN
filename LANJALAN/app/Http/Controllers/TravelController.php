@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\travel_agent;
+use App\Models\User;
 
 
 class TravelController extends Controller
@@ -24,9 +25,12 @@ class TravelController extends Controller
         ]);
     }
 
-    public function deletetravelpost($id) {
+    public function deletetravelpost($id, $email) {
         $travel = travel_agent::find($id);
         $travel->delete();
+        $user = User::where("email", $email)->first()->id;
+        $iduser = User::find($user);
+        $iduser->delete();
         return redirect('/travelpost')->with('success','Travel Agent berhasil dihapus');
     }
 
@@ -39,11 +43,13 @@ class TravelController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'password' => 'required',
         ]);
       
         travel_agent::create($request->all());
+        User::create($request->all());
        
         return redirect('/travelpost')->with('success','Travel created successfully.');
     }
