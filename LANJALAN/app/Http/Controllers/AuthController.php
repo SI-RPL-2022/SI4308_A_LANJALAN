@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
+
 {
+    public function landing() {
+        return view('landing');
+    }
+
     public function index()
     {
         if ($user = Auth::user()) {
@@ -37,7 +42,7 @@ class AuthController extends Controller
                 if ($user->level == 'admin') {
                     return redirect('/dashboard');
                 } elseif ($user->level == 'travel') {
-                    //
+                    return redirect('/bundles');
                 } elseif ($user->level == 'user') {
                     //
                 }

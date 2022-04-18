@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('hargaWisata');
             $table->text('deskripsiWisata');
             $table->string('lokasiWisata');
+            $table->timestamps();
         });
     }
 

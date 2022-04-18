@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('travel_agents', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamps();
-
+        Schema::table('travel_agents', function (Blueprint $table) {
+            $table->string('username'); // baru   
+            $table->string('level'); // baru
         });
     }
 
@@ -30,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('travel_agents');
+        Schema::table('travel_agents', function (Blueprint $table) {
+            $table->dropColumn('username');
+            $table->dropColumn('level');
+        });
     }
 };

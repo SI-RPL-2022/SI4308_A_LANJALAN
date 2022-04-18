@@ -2,44 +2,37 @@
 
 @section('container')
 <div class="pt-5">
-<h2>Wisata Post</h2>
+<h2>Travel Detail</h2>
 <div class="mt-3 mb-3">
-<a href="/" class="btn btn-primary">Tambah Post Wisata</a>
+    <div class=" ">
+        <a href="/" class="btn btn-primary">Edit</a>
+        <a href="/" class="btn btn-danger">Delete</a>
+    </div>
 </div>
    <!-- show buku -->
-   <h1 class="fw-bold text-center">Detail Travel Agen</h1>
         <div class="text-center m-5">
-        <img class= "w-50" src= " " alt=" ">
+        <img class= "w-50" src="/img/travel.jpg" alt=" ">
         </div>
         <hr>
-
          <form class="me-auto">
          <?php 
          ?>
             <div class="mb-3">
-                <label for="id" class="form-label fw-bold">ID Travel Agen wisata :</label>
-                <p>andra</p>
+                <label  class="form-label fw-bold">Nama Travel :</label>
+                <p>{{ $detailtravel->name }}</p>
             </div>
             <div class="mb-3">
-                <label for="name" class="form-label fw-bold">Nama Travel Agen :</label>
-                <p>lutfi</p>
+                <label  class="form-label fw-bold">Email :</label>
+                <p>{{ $detailtravel->email }}</p>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label fw-bold">Email Travel Agen :</label>
-                <p>karisma</p>
+                <label  class="form-label fw-bold">Username :</label>
+                <p>{{ $detailtravel->username }}</p>
             </div>
             <div class="mb-3">
-                <label for="deskripsi" class="form-label fw-bold">Deskripsi :</label>
-                <p>nabeel</p>
+                <label  class="form-label fw-bold">Password :</label>
+                <p>{{ $detailtravel->password }}</p>
             </div>
-            
-         
-            <div class="row row-cols-lg-auto justify-content-center ">
-                <button class="btn btn-primary me-2 ms-2 " style="width: 400px;" type="button" data-bs-toggle="modal" data-bs-target="#modalsunting">Sunting</button>
-                <a class="btn btn-danger me-2 ms-2 " style="width: 400px;" type="submit" href="delete.php?id_buku=<?= $show['id_buku'] ?>">Hapus</a>
-            </div>
-            <?php 
-        ?>
         </form>
     </div>
   </div>

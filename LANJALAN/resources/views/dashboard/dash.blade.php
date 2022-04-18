@@ -41,18 +41,17 @@
             <td>tanggal</td>
             <td>Rp </td>
             <td><form action="" method="POST"><div class="d-flex">
-              <div class="me-3">
-              Dikonfirmasi
+              <div class="me-4">
                 <select class="form-control" id="status" name="status">
                       <option selected>Pilih</option>
                       <option value="Dikonfirmasi">Dikonfirmasi</option>
-                      <option value="Dikemas">Dikemasn</option>
+                      <option value="Dikemas">Dikemas</option>
                       <option value="Dikirim">Dikirim</option>
                       <option value="Selesai">Selesai</option>
                 </select>
               </div>
               <div> <input type="text" name="pinjam_id" value=" " hidden> 
-              <button name="submit" type="submit" class="btn btn-primary">Ubah</button>
+              <button name="submit" type="submit" class="btn btn-primary ms-3">Ubah</button>
               </div>
             </div></form> </td>
             
