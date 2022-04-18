@@ -42,7 +42,7 @@ class AuthController extends Controller
                 if ($user->level == 'admin') {
                     return redirect('/dashboard');
                 } elseif ($user->level == 'travel') {
-                    //
+                    return redirect('/bundles');
                 } elseif ($user->level == 'user') {
                     //
                 }
