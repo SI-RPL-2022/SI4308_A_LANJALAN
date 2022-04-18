@@ -18,11 +18,11 @@
                     
                 <div class="mx-2 my-2">
                     <a href="/detailtravel/{{ $p->id }}" class="text-decoration-none link-dark">
-                        <div class="card " style="width: 14rem;">
-                            <img src="img/travel.jpg" class="card-img-top  imgcard" alt="">
+                        <div class="card " style="width: 16rem;">
+                            <img src="img/travel.jpg" class="card-img-top imgcard" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $p->name}}</h5>
-                                <p class="card-text p-0 m-0">{{ $p->email }}</p>
+                                <p class="card-text p-0 m-0 text-wrap">{{ $p->email }}</p>
                                 <div class="mt-2">
                                     <a href="">
                                         <button class="btn btn-warning">Edit</button>

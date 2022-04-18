@@ -3,6 +3,7 @@
 use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TravelController;
 
 /*
@@ -18,7 +19,11 @@ use App\Http\Controllers\TravelController;
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard\dash');
-// });
+//     });
+
+Route::get('/', function () {return view('landing', ["title" => "Lanjalan"]);});
+Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
+Route::get('/', [AuthController::class, 'landing'])->name('landing');
 
 //admin -> wisata
 Route::get('/dashboard', [WisataController::class, 'dashboard']);

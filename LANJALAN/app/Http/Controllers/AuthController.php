@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
+
 {
+    public function landing() {
+        return view('landing');
+    }
+
     public function index()
     {
         if ($user = Auth::user()) {
