@@ -27,7 +27,7 @@
                                 <p class="card-text p-0 m-0">Rp{{ $p->hargaWisata }}</p>
                                 <p class="card-text ">{{ Str::words($p->deskripsiWisata, 6) }}</p>
                                 <div class="mt-2">
-                                    <a href="">
+                                    <a href="{{ route('wisatas.edit',$p->id) }}">
                                         <button class="btn btn-warning">Edit</button>
                                     </a>
                                     <a href="{{ route('deletewisata', ['id' => $p->id]) }}">

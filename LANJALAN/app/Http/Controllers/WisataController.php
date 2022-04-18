@@ -52,6 +52,24 @@ class WisataController extends Controller
        
         return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditambahkan');
     }
+    public function edit(wisata $wisata)
+    {
+        return view('dashboard.wisata.editwisata',compact('wisata'));
+    }
+
+    public function update(Request $request, wisata $wisata)
+    {
+        $request->validate([
+            'namaWisata' => 'required',
+            'hargaWisata' => 'required',
+            'deskripsiWisata' => 'required',
+            'lokasiWisata' => 'required',
+        ]);
+      
+        $wisata->update($request->all());
+      
+        return redirect('/wisatapost')->with('success','Wisata edited successfully.');
+    }
 
     public function deletewisata($id) {
         $wisata = wisata::find($id);
