@@ -33,4 +33,23 @@ class BundleController extends Controller
        
         return redirect('/bundles')->with('success','Bundle created successfully.');
     }
+
+    public function edit(bundle $bundle)
+    {
+        return view('dashboardtravel.bundle.editbundle',compact('bundle'));
+    }
+
+    public function update(Request $request, bundle $bundle)
+    {
+        $request->validate([
+            'judulBundle' => 'required',
+            'hargaBundle' => 'required',
+            'deskripsiBundle' => 'required',
+            'tanggalExpBundle' => 'required',
+        ]);
+      
+        $bundle->update($request->all());
+      
+        return redirect('/bundles')->with('success','Bundle edited successfully.');
+    }
 }

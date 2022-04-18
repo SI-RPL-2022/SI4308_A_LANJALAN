@@ -37,7 +37,7 @@
    
                     <a class="btn btn-info" href="">Show</a>
     
-                    <a class="btn btn-primary" href="">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('bundles.edit',$bundle->id) }}">Edit</a>
       
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
