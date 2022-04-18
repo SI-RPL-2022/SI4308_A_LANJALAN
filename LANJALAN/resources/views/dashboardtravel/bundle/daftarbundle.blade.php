@@ -7,7 +7,7 @@
                 <h2>Daftar Tiket Bundle</h2>
             </div>
             <div class="float-end">
-                <a class="btn btn-success" href=""> Tambah Tiket Bundle Baru</a>
+                <a class="btn btn-success" href="{{ route('bundles.create') }}"> Tambah Tiket Bundle Baru</a>
             </div>
         </div>
     </div>
