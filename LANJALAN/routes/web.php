@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TravelController;
+use App\Http\Controllers\BundleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('editor', AdminController::class);
     });
 });
+
+//travel agent
+Route::resource('bundles', BundleController::class);
 
 
