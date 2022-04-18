@@ -34,27 +34,37 @@ class DatabaseSeeder extends Seeder
         DB::table('travel_agents')->insert([
             'name' => 'Panorama Destination',
             'email' => 'PanoramaDestination@gmail.com',
+            'username' => 'panorama',
+            'level' => 'travel',
             'password' => bcrypt('123'),
         ]);
 
         DB::table('travel_agents')->insert([
             'name' => 'Butik Trip',
             'email' => 'ButikTrip@gmail.com',
+            'username' => 'butiktrip',
+            'level' => 'travel',
             'password' => bcrypt('123'),
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'Bayubuana',
             'email' => 'Bayubuana@gmail.com',
+            'username' => 'bayubuana',
+            'level' => 'travel',
             'password' => bcrypt('123'),
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'MMBC',
             'email' => 'MMBC@gmail.com',
+            'username' => 'mmbc',
+            'level' => 'travel',
             'password' => bcrypt('123'),
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'Darmawisata Indonesiap',
             'email' => 'DarmawisataIndonesia@gmail.com',
+            'username' => 'darmawisata',
+            'level' => 'travel',
             'password' => bcrypt('123'),
         ]);
         //travel close-------------------------------------------------------------
