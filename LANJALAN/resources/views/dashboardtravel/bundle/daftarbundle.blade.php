@@ -35,7 +35,7 @@
             <td>
                 <form action="" method="POST">
    
-                    <a class="btn btn-info" href="">Show</a>
+                    <a class="btn btn-info" href="/bundles/{{$bundle->id}}">Show</a>
     
                     <a class="btn btn-primary" href="{{ route('bundles.edit',$bundle->id) }}">Edit</a>
       

@@ -52,4 +52,13 @@ class BundleController extends Controller
       
         return redirect('/bundles')->with('success','Bundle edited successfully.');
     }
+
+    public function show($id){
+
+        return view('dashboardtravel.bundle.detailbundle', [
+            "title" => "Detail Bundle",
+            "detailbundle" => bundle::findOrFail($id)
+    
+        ]);
+    }
 }
