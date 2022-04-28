@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow p-2 sticky-top" style="background-color: #199D6B;">
     <div class="container-fluid my-0">
-        <img src="{{ asset('img/Lanjalan.png') }}" class="img-fluid mx-4" alt="Logo Lanjalan" style="width: 10rem; height: auto;">
+        <a href="/">
+            <img  src="{{ asset('img/Lanjalan.png') }}" class="img-fluid mx-4" alt="Logo Lanjalan" style="width: 10rem; height: auto;">
+        </a>    
         <div class="d-flex">
             <ul class="navbar-nav mx-3">
                 <li class="nav-item">

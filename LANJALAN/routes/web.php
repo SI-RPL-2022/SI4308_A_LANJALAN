@@ -60,4 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
 //travel agent
 Route::resource('bundles', BundleController::class);
 
+//user
+Route::get('/wisatadetail/{id}', [WisataController::class, 'wisatadetailuser']);
+Route::get('/bundleuser/{id}', [BundleController::class, 'bundleuser']);
 

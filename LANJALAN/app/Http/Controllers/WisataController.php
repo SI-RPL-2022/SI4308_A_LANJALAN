@@ -77,4 +77,15 @@ class WisataController extends Controller
         return redirect('/wisatapost')->with('success','Objek wisata berhasil dihapus');
     }
 
+
+
+    //user
+    public function wisatadetailuser($id){
+
+        return view('userarea.wisata.detailwisata', [
+            "title" => "Detail Wisata",
+            "detailwisata" => wisata::findOrFail($id)
+    
+        ]);
+    }
 }

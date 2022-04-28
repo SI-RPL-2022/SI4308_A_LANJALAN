@@ -15,7 +15,7 @@
 </head>
 <body >
 
-@include('layouts.header')
+@include('layoutsmain.header')
 
 @yield('container')
     

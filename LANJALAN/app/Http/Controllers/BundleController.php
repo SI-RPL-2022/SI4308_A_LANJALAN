@@ -61,4 +61,13 @@ class BundleController extends Controller
     
         ]);
     }
+
+    public function bundleuser($id){
+
+        return view('userarea.bundle.detailbundle', [
+            "title" => "Detail Bundle",
+            "detailbundle" => bundle::findOrFail($id)
+    
+        ]);
+    }
 }
