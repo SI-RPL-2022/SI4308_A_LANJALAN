@@ -23,7 +23,7 @@
 
 <div class="px-5 mx-5">
 {{-- wisata --}}
-    <div class="container pt-4">
+    <div class="container py-5 my-2">
         <h3 class="text-center p-1">Wisata</h3>
         <p class="text-secondary px-5 text-center">Pergi ke wisata paling populer di Indonesia dimanapun yang kamu mau!</p>
         @if ($wisatas->count())
@@ -56,15 +56,20 @@
         <p class="text-center fs-5 fw-bold p-0 m-0">No Wisata Post Found.</p>
         <p class="text-center p-0 m-0">Please wait for the maintenance</p>
         @endif   
+
     </div>
 {{-- wisata close --}}
+
+<hr>
 
 {{-- bundle disini--}}
 
 {{-- bundle close --}}
 
+<hr>
+
 {{-- Travel agent --}}
-    <div class="container pt-4">
+    <div class="container py-5 my-2">
         <h3 class="text-center p-1">Our Travel Agents</h3>
         <p class="text-secondary px-5 text-center">Kami bekerja sama dengan berbagai jaringan travel agent di seluruh dunia untuk memastikan kenyamanan Anda saat berpergian di belahan dunia manapun!</p>
 
