@@ -36,11 +36,11 @@
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+        <input type="email" class="form-control" id="email" placeholder="Email" name="email">
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Password</label>
-        <input type="text" class="form-control" id="password" placeholder="password" name="password">
+        <input type="password" class="form-control" id="password" placeholder="password" name="password">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
    

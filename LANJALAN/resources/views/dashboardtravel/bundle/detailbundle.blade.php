@@ -5,7 +5,7 @@
 <h2>Bundle Detail</h2>
 <div class="mt-3 mb-3">
     <div class=" ">
-        <a href="/" class="btn btn-primary">Edit</a>
+        <a href="{{ route('bundles.edit',$detailbundle->id) }}" class="btn btn-warning">Edit</a>
         <a href="/" class="btn btn-danger">Delete</a>
     </div>
 </div>

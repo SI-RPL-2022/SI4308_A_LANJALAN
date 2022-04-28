@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BundleController;
+use App\Models\wisata;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,10 @@ use App\Http\Controllers\BundleController;
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard\dash');
+
 //     });
 
-Route::get('/', function () {return view('landing', ["title" => "Lanjalan"]);});
+// Route::get('/', function () {return view('landing', ["title" => "Lanjalan", "wisatas" => wisata::paginate(4)->withQueryString() ]);});
 Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
 Route::get('/', [AuthController::class, 'landing'])->name('landing');
 
