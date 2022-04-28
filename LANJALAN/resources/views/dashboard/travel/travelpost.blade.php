@@ -24,9 +24,6 @@
                                 <h5 class="card-title">{{ $p->name}}</h5>
                                 <p class="card-text p-0 m-0 text-wrap">{{ $p->email }}</p>
                                 <div class="mt-2">
-                                    <a href="">
-                                        <button class="btn btn-warning">Edit</button>
-                                    </a>
                                     <a href="{{ route('deletetravelpost', ['id' => $p->id , 'email' => $p->email]) }}">
                                         <button class="btn btn-danger">Delete</button>
                                     </a>

@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\wisata;
+use App\Models\travel_agent;
+use App\Models\bundle;
 
 class AuthController extends Controller
 
 {
     public function landing() {
-        return view('landing');
+        return view('landing', [
+            "wisatas" => wisata::paginate(4)->withQueryString(),
+            "travelagentpost" => travel_agent::paginate(4)->withQueryString(),
+            "bundles" => bundle::paginate(4)->withQueryString()
+
+        ]);
     }
 
     public function index()

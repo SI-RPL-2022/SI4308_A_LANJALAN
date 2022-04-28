@@ -5,7 +5,6 @@
 <h2>Travel Detail</h2>
 <div class="mt-3 mb-3">
     <div class=" ">
-        <a href="/" class="btn btn-primary">Edit</a>
         <a href="/" class="btn btn-danger">Delete</a>
     </div>
 </div>
@@ -29,10 +28,7 @@
                 <label  class="form-label fw-bold">Username :</label>
                 <p>{{ $detailtravel->username }}</p>
             </div>
-            <div class="mb-3">
-                <label  class="form-label fw-bold">Password :</label>
-                <p>{{ $detailtravel->password }}</p>
-            </div>
+            
         </form>
     </div>
   </div>
