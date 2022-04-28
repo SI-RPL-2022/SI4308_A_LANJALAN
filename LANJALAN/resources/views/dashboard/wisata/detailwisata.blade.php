@@ -9,7 +9,7 @@
         <a href="/" class="btn btn-danger">Delete</a>
     </div>
 </div>
-   <!-- show buku -->
+   <!-- show Detail Wisata -->
         <div class="text-center m-5">
         <img class= "w-50" src="/img/papuma.jpg" alt=" ">
         </div>
