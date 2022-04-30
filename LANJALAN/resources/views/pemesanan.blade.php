@@ -19,7 +19,8 @@
 <form action="{{ route('pemesanan.store') }}" method="POST">
     @csrf
     <h5>Informasi Wisata</h5>
-
+    <input hidden type="text" class="form-control" id="status" name="status" value="Belum Kirim Bukti">
+    <input hidden type="text" class="form-control" id="buktiTf" name="buktiTf" value="Belum Ada Foto">
     <div class="mb-3 border  rounded p-3">
         <div class="row">
             <div class="col-1">

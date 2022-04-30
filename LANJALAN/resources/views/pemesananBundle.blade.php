@@ -3,7 +3,7 @@
 @section('container')
 
 <div class="py-5 my-2 px-5 mx-5">
-    <h3 class="mb-3">Pemesanan Wisata</h3>
+    <h3 class="mb-3">Pemesanan Bundle</h3>
     
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -16,26 +16,20 @@
     </div>
 @endif
    
-<form action="{{ route('pemesanan.store') }}" method="POST">
+<form action="{{ route('storeBundle') }}" method="POST">
     @csrf
-    <h5>Informasi Wisata</h5>
+    <h5>Informasi Bundle</h5>
+    <input hidden type="text" class="form-control" id="status" name="status" value="Belum Kirim Bukti">
+    <input hidden type="text" class="form-control" id="buktiTf" name="buktiTf" value="Belum Ada Foto">
 
     <div class="mb-3 border  rounded p-3">
         <div class="row">
             <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Wisata</label>
+                <label for="exampleFormControlInput1" class="form-label">Bundle</label>
             </div>
             <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->namaWisata }}</label>
-                <input hidden type="text" class="form-control" id="wisata_id" name="wisata_id" value="{{ $wisata->id }}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
-            </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->lokasiWisata }}</label>
+                <label for="exampleFormControlInput1" class="form-label">: {{ $bundle->judulBundle }}</label>
+                <input hidden type="text" class="form-control" id="bundle_id" name="bundle_id" value="{{ $bundle->id }}">
             </div>
         </div>
         <div class="row">
@@ -43,8 +37,8 @@
                 <label for="exampleFormControlInput1" class="form-label">Harga</label>
             </div>
             <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->hargaWisata }}</label>
-                <input hidden type="text" class="form-control" id="wisata_id" name="totalHarga" value="{{ $wisata->hargaWisata }}">
+                <label for="exampleFormControlInput1" class="form-label">: {{ $bundle->hargaBundle }}</label>
+                <input hidden type="text" class="form-control" id="" name="totalHarga" value="{{ $bundle->hargaBundle }}">
             </div>
         </div>
     </div>

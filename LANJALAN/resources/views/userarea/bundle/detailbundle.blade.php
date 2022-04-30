@@ -25,7 +25,7 @@
                     <p>{{ $detailbundle->tanggalExpBundle }}</p>
                 </div>
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailbundle->hargaBundle }}</button>
+                    <a href="{{route('showBundle', ['id' => $detailbundle->id])}}" type="submit" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailbundle->hargaBundle }}</a>
                 </div>
             </form>
     </div>   

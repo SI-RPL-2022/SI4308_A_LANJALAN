@@ -40,13 +40,12 @@ class PemesananController extends Controller
     {
         $request->validate([
             'wisata_id' => 'required',
-            // 'bundle_id' => 'required',
             'totalHarga' => 'required',
             'namaPemesan' => 'required',
             'noTelepon' => 'required',
             'emailPemesan' => 'required',
-            // 'buktiTf' => 'required',
-            // 'status' => 'required',
+            'buktiTf' => 'required',
+            'status' => 'required',
             'tanggal' => 'required',
             'travelAgent_id' => 'required',
 
@@ -68,13 +67,42 @@ class PemesananController extends Controller
         return view('pemesanan', [
             "title" => "Pemesanan",
             "wisata" => wisata::findOrFail($id),
-            "bundle" => bundle::findOrFail($id),
             "travel" => travel_agent::all(),
             "pesanan" => pesanan::findOrFail($id),
     
         ]);
     }
 
+    public function showBundle($id)
+    {
+        return view('pemesananBundle', [
+            "title" => "Pemesanan Bundle",
+            "bundle" => bundle::findOrFail($id),
+            "travel" => travel_agent::all(),
+            "pesanan" => pesanan::findOrFail($id),
+    
+        ]);
+    }
+    public function storeBundle(Request $request )
+    {
+        $request->validate([
+            'bundle_id' => 'required',
+            'totalHarga' => 'required',
+            'namaPemesan' => 'required',
+            'noTelepon' => 'required',
+            'emailPemesan' => 'required',
+            'buktiTf' => 'required',
+            'status' => 'required',
+            'tanggal' => 'required',
+            'travelAgent_id' => 'required',
+
+        ]);
+      
+        pesanan::create($request->all());
+       
+        return redirect('/riwayatpesanan')->with('success','Pemesanan berhasil dipesan.');
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *
