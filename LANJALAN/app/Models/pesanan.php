@@ -13,5 +13,8 @@ class pesanan extends Model
     public function wisata(){
         return $this->hasMany(wisata::class);
     }
+    public function bundle(){
+        return $this->belongsTo(bundle::class);
+    }
 
 }

@@ -25,7 +25,7 @@
                     <p>{{ $detailwisata->lokasiWisata }}</p>
                 </div>
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailwisata->hargaWisata }}</button>
+                    <a  href="{{route('pesan', ['id' => $detailwisata->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailwisata->hargaWisata }}</a>
                 </div>
             </form>
     </div>   

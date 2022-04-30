@@ -106,6 +106,10 @@ class DatabaseSeeder extends Seeder
         DB::table('pesanans')->insert([
             'wisata_id' => 1,
             'bundle_id' => null,
+            'totalHarga' => '100000',
+            'namaPemesan' => 'Karisma Nabil',
+            'noTelepon' => '+6281252787166',
+            'emailPemesan' => 'kharismanabil@gmail.com',
             'buktiTf' => 'bukti.png',
             'status' => 'Done',
             'tanggal' => '2022-04-06',
@@ -115,6 +119,10 @@ class DatabaseSeeder extends Seeder
         DB::table('pesanans')->insert([
             'wisata_id' => null,
             'bundle_id' => 3,
+            'totalHarga' => '100000',
+            'namaPemesan' => 'Nabel',
+            'noTelepon' => '+628125525252',
+            'emailPemesan' => 'Nabeel@gmail.com',
             'buktiTf' => 'bukti2.png',
             'status' => 'Done',
             'tanggal' => '2022-04-05',

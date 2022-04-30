@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BundleController;
 use App\Models\wisata;
+use App\Http\Controllers\PemesananController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +62,28 @@ Route::group(['middleware' => ['auth']], function () {
 //travel agent
 Route::resource('bundles', BundleController::class);
 
+//pemesanan
+Route::get('/pesan/{id}', [PemesananController::class, 'show'])->name('pesan');
+Route::resource('pemesanan', PemesananController::class); //pesan Wisata dan update 
+Route::get('/konfirmasi/{id}', [PemesananController::class, 'konfirmasi'])->name('konfirmasi');
+Route::get('/riwayatpesanan', [PemesananController::class, 'riwayatpesanan']);
+Route::get('/pesanBundle/{id}', [PemesananController::class, 'showBundle'])->name('showBundle'); //show pesan bundle
+Route::post('/pesanBundle/{id}', PemesananController::class, 'showBundle'); //post
+
+
+
 //user
 Route::get('/wisatadetail/{id}', [WisataController::class, 'wisatadetailuser']);
 Route::get('/bundleuser/{id}', [BundleController::class, 'bundleuser']);
 
+
+
+// Route::get('/pesan/pemesanan', 'PemesananController@pemesanan');
+// Route::post('/pesan/pemesanan', 'PemesananController@postpemesanan');
+
+// Route::get('/pesan/konfirmasi', 'PemesananController@konfirmasi');
+// Route::post('/pesan/konfirmasi', 'PemesananController@postkonfirmasi');
+// Route::post('/pesan/remove-image', 'PemesananController@removeImage');
+
+// Route::get('/pesan/create-step3', 'PemesananController@createStep3');
+// Route::post('/pesan/store', 'PemesananController@store');

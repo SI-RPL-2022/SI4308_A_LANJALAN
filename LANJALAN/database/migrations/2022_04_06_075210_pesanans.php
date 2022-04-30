@@ -17,10 +17,16 @@ return new class extends Migration
             $table->id();
             $table->foreignId('wisata_id')->nullable();
             $table->foreignId('bundle_id')->nullable();
-            $table->string('buktiTf');
-            $table->string('status');
+            $table->integer('totalHarga')->nullable();
+            $table->string('namaPemesan')->nullable();
+            $table->string('noTelepon')->nullable();
+            $table->string('emailPemesan')->nullable();
+            $table->string('buktiTf')->nullable();
+            $table->string('status')->nullable();
             $table->date('tanggal');
             $table->foreignId('travelAgent_id');
+            $table->timestamps();
+
         });
     }
 
