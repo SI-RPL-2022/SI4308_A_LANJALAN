@@ -16,36 +16,43 @@
     </div>
 @endif
    
-<form action="{{ route('pemesanan.store') }}" method="POST">
+<form action="{{ route('pemesanan.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <h5>Informasi Wisata</h5>
     <input hidden type="text" class="form-control" id="status" name="status" value="Belum Kirim Bukti">
     <input hidden type="text" class="form-control" id="buktiTf" name="buktiTf" value="Belum Ada Foto">
     <div class="mb-3 border  rounded p-3">
         <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Wisata</label>
+            <div class="col-2">
+                        <img class="w-100" src="{{ asset('storage/' . $wisata->image)  }}">
             </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->namaWisata }}</label>
-                <input hidden type="text" class="form-control" id="wisata_id" name="wisata_id" value="{{ $wisata->id }}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
-            </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->lokasiWisata }}</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Harga</label>
-            </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->hargaWisata }}</label>
-                <input hidden type="text" class="form-control" id="wisata_id" name="totalHarga" value="{{ $wisata->hargaWisata }}">
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-1">
+                        <label for="exampleFormControlInput1" class="form-label">Wisata</label>
+                    </div>
+                    <div class="col-11">
+                        <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->namaWisata }}</label>
+                        <input hidden type="text" class="form-control" id="wisata_id" name="wisata_id" value="{{ $wisata->id }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
+                    </div>
+                    <div class="col-11">
+                        <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->lokasiWisata }}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label for="exampleFormControlInput1" class="form-label">Harga</label>
+                    </div>
+                    <div class="col-11">
+                        <label for="exampleFormControlInput1" class="form-label">: {{ $wisata->hargaWisata }}</label>
+                        <input hidden type="text" class="form-control" id="wisata_id" name="totalHarga" value="{{ $wisata->hargaWisata }}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

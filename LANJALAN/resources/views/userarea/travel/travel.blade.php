@@ -23,7 +23,7 @@
 
                 </div>
                 <div class="mt-3 d-flex justify-content-center">
-                    {{ $travelagentpost->links('pagination::bootstrap-4') }}   
+                    <a href="/traveltravel" class="btn btn-primary">Lihat Semua</a>
                 </div> 
     {{-- card close --}}
     @else

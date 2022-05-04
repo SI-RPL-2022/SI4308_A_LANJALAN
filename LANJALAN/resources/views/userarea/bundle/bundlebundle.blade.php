@@ -1,4 +1,6 @@
+@extends('layoutsmain.main')
 
+@section('container')
 {{-- bundle disini--}}
 <div class="container py-5 my-2">
     <h3 class="text-center p-1">Bundle</h3>
@@ -24,7 +26,8 @@
 
                 </div>
                 <div class="mt-3 d-flex justify-content-center">
-                    <a href="/bundlebundle" class="btn btn-primary">Lihat Semua</a>
+                    {{ $bundles->links('pagination::bootstrap-4') }}   
+
                 </div> 
     {{-- card close --}}
     @else
@@ -33,3 +36,5 @@
     @endif   
 </div>
 {{-- bundle close --}}
+
+@endsection

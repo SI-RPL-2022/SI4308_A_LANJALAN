@@ -1,3 +1,6 @@
+@extends('layoutsmain.main')
+
+@section('container')
 {{-- wisata --}}
 <div class="container py-5 my-2">
     <h3 class="text-center p-1">Wisata</h3>
@@ -25,7 +28,8 @@
 
                 </div>
                 <div class="mt-3 d-flex justify-content-center">
-                    <a href="/wisatawisata" class="btn btn-primary">Lihat Semua</a>
+                    {{ $wisatas->links('pagination::bootstrap-4') }}   
+                    
                 </div> 
     {{-- card close --}}
     @else
@@ -35,3 +39,4 @@
 
 </div>
 {{-- wisata close --}}
+@endsection

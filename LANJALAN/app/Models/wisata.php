@@ -9,9 +9,6 @@ class wisata extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'namaWisata', 'hargaWisata', 'deskripsiWisata', 'lokasiWisata'
-    ];
 
     protected $guarded = ['id'];
 

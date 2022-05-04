@@ -18,6 +18,6 @@ class bundle extends Model
         return $this->hasMany(wisata::class);
     }
     public function pesanan(){
-        return $this->hasMany(pesanan::class);
+        return $this->belongsTo(pesanan::class);
     }
 }

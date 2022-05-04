@@ -1,20 +1,23 @@
+@extends('layoutsmain.main')
 
-{{-- bundle disini--}}
+@section('container')
+
+{{-- Travel agent --}}
 <div class="container py-5 my-2">
-    <h3 class="text-center p-1">Bundle</h3>
-    <p class="text-secondary px-5 text-center">Nikmati wisata ke berbagai daerah dengan paket wisata bundle kamu bisa kemana aja!</p>
-    @if ($bundles->count())
+    <h3 class="text-center p-1">Our Travel Agents</h3>
+    <p class="text-secondary px-5 text-center">Kami bekerja sama dengan berbagai jaringan travel agent di seluruh dunia untuk memastikan kenyamanan Anda saat berpergian di belahan dunia manapun!</p>
+
+    @if ($travelagentpost->count())
     {{-- card --}}
                 <div class="flex-wrap justify-content-center d-flex py-3">
-                    @foreach ($bundles as $p)
+                    @foreach ($travelagentpost as $p)
                         
                     <div class="mx-2 my-2">
-                        <a href="/bundleuser/{{ $p->id }}" class="text-decoration-none link-dark">
+                        <a href="/detailwisata/{{ $p->id }}" class="text-decoration-none link-dark">
                             <div class="card border-0" style="width: 14rem;">
                                 <img src="img/papuma.jpg" class="card-img-top  imgcard" alt="">
                                 <div class="pt-2">
-                                    <h6 class=" mb-0">{{ $p->judulBundle}}</h6>
-                                    <small class="card-text p-0 m-0">Rp{{ $p->hargaBundle }}</small>
+                                    <h6 class=" mb-0">{{ $p->name}}</h6>
                                 </div>
                             </div>
                         </a>
@@ -24,12 +27,14 @@
 
                 </div>
                 <div class="mt-3 d-flex justify-content-center">
-                    <a href="/bundlebundle" class="btn btn-primary">Lihat Semua</a>
+                    {{ $travelagentpost->links('pagination::bootstrap-4') }}   
                 </div> 
     {{-- card close --}}
     @else
-    <p class="text-center fs-5 fw-bold p-0 m-0">No Bundles Post Found.</p>
+    <p class="text-center fs-5 fw-bold p-0 m-0">No Travel Agent Post Found.</p>
     <p class="text-center p-0 m-0">Please wait for the maintenance</p>
     @endif   
 </div>
-{{-- bundle close --}}
+{{-- Travel Agent close --}}
+
+@endsection

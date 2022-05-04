@@ -11,7 +11,7 @@
 </div>
    <!-- show Detail Wisata -->
         <div class="text-center m-5">
-        <img class= "w-50" src="/img/papuma.jpg" alt=" ">
+        <img class= "w-50" src="{{ asset('storage/' . $detailwisata->image)  }}" alt=" ">
         </div>
         <hr>
          <form class="me-auto">
@@ -24,6 +24,10 @@
             <div class="mb-3">
                 <label  class="form-label fw-bold">Harga :</label>
                 <p>{{ $detailwisata->hargaWisata }}</p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">Peta :</label>
+                <div class="gmap_canvas"><iframe width="500" height="300" id="gmap_canvas" src="{{ $detailwisata->map }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             </div>
             <div class="mb-3">
                 <label  class="form-label fw-bold">Deskripsi :</label>

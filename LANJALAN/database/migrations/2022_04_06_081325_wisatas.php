@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('namaWisata');
             $table->integer('hargaWisata');
+            $table->string('image')->nullable();//baru
+            $table->string('map');//baru
             $table->text('deskripsiWisata');
             $table->string('lokasiWisata');
             $table->timestamps();

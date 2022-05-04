@@ -110,8 +110,8 @@ class DatabaseSeeder extends Seeder
             'namaPemesan' => 'Karisma Nabil',
             'noTelepon' => '+6281252787166',
             'emailPemesan' => 'kharismanabil@gmail.com',
-            'buktiTf' => 'bukti.png',
-            'status' => 'Done',
+            'buktiTf' => 'Belum Ada Foto',
+            'status' => 'Belum Kirim Bukti',
             'tanggal' => '2022-04-06',
             'travelAgent_id' => 1,
         ]);
@@ -123,8 +123,8 @@ class DatabaseSeeder extends Seeder
             'namaPemesan' => 'Nabel',
             'noTelepon' => '+628125525252',
             'emailPemesan' => 'Nabeel@gmail.com',
-            'buktiTf' => 'bukti2.png',
-            'status' => 'Done',
+            'buktiTf' => 'Belum Ada Foto',
+            'status' => 'Belum Kirim Bukti',
             'tanggal' => '2022-04-05',
             'travelAgent_id' => 3,
         ]);
@@ -134,6 +134,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Pantai Papuma',
             'hargaWisata' => '100000',
+            'image' => 'images/papuma.jpg',
+            'map' => 'https://maps.google.com/maps?q=pantai%20papuma&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Pantai Papuma adalah sebuah pantai yang menjadi tempat wisata di Kabupaten Jember,Provinsi Jawa Timur, Indonesia. [1]Nama Papuma[2] sendiri sebenarnya adalah sebuah singkatan dari “Pasir Putih Malikan.
 
             Pantai papuma berada di Desa Lojejer, Kecamatan Wuluhan, Kabupaten Jember. Pantai papuma adalah salah satu pantai yang cukup populer dan terkenal di Jember. Walaupun jarak sekitar 40 kilometer cukup jauh dari pusat kota Jember. Namun, keindahan pasir putih Malikan ini cukup eksotis dan mampu menarik perhatian wisatawan lokal hingga mancanegara untuk datang kesana.',
@@ -142,6 +144,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Pantai Parai Tenggiri',
             'hargaWisata' => '200000',
+            'image' => 'images/Tenggiri.jpg',
+            'map' => 'https://maps.google.com/maps?q=Pantai%20Parai%20Tenggiri&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Pasti diantara kamu sudah pernah menyaksikan film populer Laskar Pelangi yang berlatar di Pulang Belitung, bukan? Selain alur ceritanya yang menarik, lokasi film ini juga banyak menyita perhatian penonton. 
 
             Berbeda dengan pantai lain pada umumnya, Parai Tenggiri memiliki struktur pantai yang landai dengan air laut berwarna hijau toska serta pasir putihnya yang lembut. Ombak di pantai ini juga tenang sehingga menjadi salah satu alasan yang menarik bagi wisatawan yang senang berenang. 
@@ -152,6 +156,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Nusa Dua',
             'hargaWisata' => '100000',
+            'image' => 'images/nusadua.jpg',
+            'map' => 'https://maps.google.com/maps?q=Nusa%20Dua&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Pulau Seribu Dewa satu ini memang tidak perlu diragukan lagi terkait keindahan dan pesonanya dalam memikat para wisatawan dalam negeri maupun mancanegara. Di Bali, ada satu tempat wisata yang begitu cantik, yakni Nusa Dua. 
 
             Objek wisata pantai ini memiliki pasir putih yang lembut dan air laut yang berwarna biru jernih. Kamu akan dimanjakan dengan berbagai fasilitas saat berkunjung ke tempat satu ini. Mulai dari penginapan dan resort yang berkelas, restoran, pusat perbelanjaan, hingga aktivitas berselancar di pantainya.',
@@ -160,6 +166,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Gunung Rinjani',
             'hargaWisata' => '70000',
+            'image' => 'images/rinjani.jpg',
+            'map' => 'https://maps.google.com/maps?q=Gunung%20Rinjani&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Selain Gili Trawangan, di Nusa Tenggara Barat juga terdapat wisata yang tak kalah populer dan cocok bagi kamu yang suka mendaki, yakni Gunung Rinjani. Gunung ini adalah gunung berapi tertinggi kedua yang ada di Indonesia. 
 
             Gunung Rinjani memiliki pemandangan terindah se-Asia dengan hamparan bunga edelweis dan Danau Segara Anak. Di tempat ini juga bisa menjadi spot menarik bagi para pendaki untuk mendirikan tenda, mandi air hangat, maupun memancing ikan. 
@@ -169,6 +177,8 @@ class DatabaseSeeder extends Seeder
         ]);DB::table('wisatas')->insert([
             'namaWisata' => 'Danau Toba',
             'hargaWisata' => '100000',
+            'image' => 'images/toba.jpg',
+            'map' => 'https://maps.google.com/maps?q=Danau%20Toba&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Danau Toba sudah lama terkenal sebagai salah satu objek wisata Indonesia favorit yang sering dikunjungi sejak tahun 1980-an lho!
 
             Objek wisata Indonesia yang terkenal di dunia ini memiliki luas 1.145 kilometer persegi. Di tengah danau terdapat Pulau Samosir yang luasnya hampir sebanding dengan negara Singapura. Bisa bayangin kan Toppers, betapa megahnya Danau Toba ini?
@@ -179,6 +189,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Nusa Penida',
             'hargaWisata' => '300000',
+            'image' => 'images/nusapenida.jpg',
+            'map' => 'https://maps.google.com/maps?q=Nusa%20Penida&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Pulau Bali, sudah tidak bisa dipungkiri lagi namanya memang merajalela ke seluruh dunia karena pemandangannya yang indah, budayanya yang masih kental terasa dan pantai nya yang eksotis.
 
             Saat Toppers berkunjung ke Bali jangan heran kalau banyak banget turis berlalu lalang di sana, bahkan beberapa ada yang menetap di Bali lho!
@@ -191,6 +203,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Taman Laut Bunaken',
             'hargaWisata' => '500000',
+            'image' => 'images/bunaken.jpg',
+            'map' => 'https://maps.google.com/maps?q=Taman%20Laut%20Bunaken&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Destinasi wisata di Indonesia yang populer di mancanegara selanjutnya adalah Taman Laut Bunaken yang berada di Teluk Manado.
 
             Bunaken menjadi salah satu objek wisata di Indonesia yang mengundang decak kagum karena keindahan taman bawah lautnya yang sulit ditemukan di negara lain.
@@ -209,6 +223,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Wakatobi',
             'hargaWisata' => '100000',
+            'image' => 'images/wakatobi.jpg',
+            'map' => 'https://maps.google.com/maps?q=Wakatobi&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Masih di Pulau Sulawesi, Taman Nasional Wakatobi juga merupakan salah satu tujuan wisata bawah laut yang populer dan mendunia.
 
             Dengan luas mencapai 13.900 km2, tujuan wisata terkenal asal Indonesia ini memiliki tak kurang dari 112 jenis terumbu karang yang bersimbiosis dengan ikan-ikan bawah laut sehingga menciptakan panorama bawah laut yang tiada tanding.
@@ -219,6 +235,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Kepulauan Raja Ampat',
             'hargaWisata' => '200000',
+            'image' => 'images/rajaampat.jpg',
+            'map' => 'https://maps.google.com/maps?q=Kepulauan%20Raja%20Ampat&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Surga dunia di Indonesia selanjutnya adalah kepulauan Raja Ampat yang terletak di Papua Barat dengan kekayaan laut terlengkap di bumi.
 
             Raja Ampat atau Empat Raja merupakan 4 pulau indah yang merupakan penghasil lukisan batu kuno. Empat pulau utama yang dimaksud adalah Waigeo, Salawati, Batanta, dan Misool.
@@ -234,6 +252,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Gunung Bromo',
             'hargaWisata' => '450000',
+            'image' => 'images/bromo.jpg',
+            'map' => 'https://maps.google.com/maps?q=Gunung%20Bromo&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Kalau kamu pernah berkunjung ke Jawa Timur gak lengkap rasanya kalau belum menginjakkan kaki ke Gunung Bromo ini.
 
             Salah satu gunung berapi yang masih aktif ini memiliki pesona khas berupa gurun pasir yang sangat luat.
@@ -248,6 +268,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Pulau Komodo',
             'hargaWisata' => '750000',
+            'image' => 'images/komodo.jpg',
+            'map' => 'https://maps.google.com/maps?q=Pulau%20Komodo&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Destinasi wisata Indonesia yang tersohor di mata dunia selanjutnya adalah Pulau Komodo. Pulau yang berlokasi di Kepulauan Nusa Tenggara Timur ini merupakan rumah bagi ratusan Komodo, hewan endemik yang hanya ada di Indonesia.
 
             Selain bisa mengamati perilaku dan mengeksplorasi habitat dari hewan purba ini, Pulau Komodo juga menawarkan panorama alam yang menakjubkan.
@@ -260,6 +282,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Candi Borobudur',
             'hargaWisata' => '200000',
+            'image' => 'images/borobudur.jpg',
+            'map' => 'https://maps.google.com/maps?q=Candi%20Borobudur&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'alah satu ikon wisata budaya Indonesia yang mendunia lainnya adalah Candi Borobudur. Sebagai candi Budha terbesar di dunia dengan luas tak kurang dari 123 X 123 meter, candi yang dibangun pada masa kerajaan Mataram kuno ini merupakan warisan budaya dan sejarah Indonesia yang terkenal akan arsitektur yang memukau.
 
             Setiap tahunnya, tak cuma wisatawan domestik tetapi banyak juga wisatawan asing yang tertarik untuk mengamati keindahan dari Candi Borobudur.
@@ -272,6 +296,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Tana Toraja',
             'hargaWisata' => '300000',
+            'image' => 'images/tanatoraja.jpg',
+            'map' => 'https://maps.google.com/maps?q=Tana%20Toraja&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'ndonesia memang kaya akan adat dan budaya yang menarik mata dunia. Salah satu destinasi wisata Indonesia yang terkenal akan kekayaan tradisi budayanya adalah  Kabupaten Tana Toraja.
 
             Terletak di Sulawesi Selatan dikawasan pegunungan yang indah, Toppers masih bisa melihat uniknya keseharian dan tradisi masyarakat adat Tana Toraja.
@@ -284,6 +310,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Gili Trawangan',
             'hargaWisata' => '350000',
+            'image' => 'images/terawangan.jpg',
+            'map' => 'https://maps.google.com/maps?q=Gili%20Trawangan&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Untuk pecinta pantai, Gili Trawangan merupakan tujuan wisatawan dari seluruh dunia. Dengan kombinasi langit biru dengan semburat awan putih, jernihnya air laut dibingkai pasir putih menjadikan Gili Trawangan sebagai tujuan wisata populer baik bagi wisatawan dalam negeri maupun luar negeri.
 
             Selain pantai dan alam bawah laut, tempat wisata Nusantara yang berada di Provinsi Nusa Tenggara Barat ini juga memiliki berbagai lansekap menakjubkan dan juga spot-spot foto yang instagramable, lho.',
@@ -292,6 +320,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Goa Gong',
             'hargaWisata' => '80000',
+            'image' => 'images/goagong.jpg',
+            'map' => 'https://maps.google.com/maps?q=Goa%20Gong&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Goa Gong yang terletak di Pacitan, Jawa Timur.
 
             Panorama eksotik yang ditawarkan oleh objek wisata alam Indoneisa ini disebut-sebut sebagai salah satu goa terindah di Asia Tenggara.
@@ -304,6 +334,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Danau Kelimutu',
             'hargaWisata' => '900000',
+            'image' => 'images/kalimutu.jpg',
+            'map' => 'https://maps.google.com/maps?q=Danau%20Kelimutu&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Selain Danau Toba, destinasi wisata danau milik Indonesia yang mendunia adalah Danau Kelimutu. Danau ini merupakan danau vulkanik yang berada di puncak Gunung Kelimutu. Untuk mencapai danau indah ini, Toppers harus melakukan hiking terlebih dahulu.
 
             Keistimewaan danau yang terletak di Pulau Flores, NTT ini adalah pemandangan danau dengan tiga warna yakni hijau, putih dan biru. Setiap tahun, danau eksotik ini selalu ramai dikunjungi wisatawan mancanegara.',
@@ -312,6 +344,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Ngarai Sianok',
             'hargaWisata' => '100000',
+            'image' => 'images/ngaraisianok.jpg',
+            'map' => 'https://maps.google.com/maps?q=Ngarai%20Sianok&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Ngarai Sianok yang terletak di perbatasan Kota Bukittinggi, Kabupaten Agam, Sumatra Barat ini terkenal akan keindahannya yang mendunia.
 
             Jurang yang membentang sepanjang 15 kilometer dengan kedalaman lebih dari 100 meter ini membentuk patahan alam yang indah tiada duanya. Terlebih di tengah patahan tersebut mengalir Sungai Batang Sianok yang mengairi alam lembah nan hijau dan permai.',
@@ -320,6 +354,8 @@ class DatabaseSeeder extends Seeder
         DB::table('wisatas')->insert([
             'namaWisata' => 'Kawah Ijen',
             'hargaWisata' => '40000',
+            'image' => 'images/kawahijen.jpg',
+            'map' => 'https://maps.google.com/maps?q=Kawah%20Ijen&t=&z=11&ie=UTF8&iwloc=&output=embed',
             'deskripsiWisata' => 'Dari Banyuwangi, terdapat pesona kawah Ijen yang baru-baru ini mulai terkenal sampai ke mancanegara. Salah satu daya pikatnya adalah blue fire atau pesona api biru yang menyala dari kawah Gunung Ijen.',
             'lokasiWisata' => 'Jawa Timur',
         ]);

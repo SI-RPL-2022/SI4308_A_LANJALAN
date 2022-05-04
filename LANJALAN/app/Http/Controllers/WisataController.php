@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\wisata;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 
 class WisataController extends Controller
 {
@@ -40,35 +40,82 @@ class WisataController extends Controller
   
     public function store(Request $request)
     {
-        $request->validate([
-            'namaWisata' => 'required',
-            'hargaWisata' => 'required',
-            'deskripsiWisata' => 'required',
-            'lokasiWisata' => 'required',
+        // return $request->file('image')->store('post-images');
+        // $validatedData = $request->validate([
+        //     'namaWisata' => 'required',
+        //     'hargaWisata' => 'required',
+        //     'image' => 'image|file|max:1024',
+        //     'map' => 'required',
+        //     'deskripsiWisata' => 'required',
+        //     'lokasiWisata' => 'required',
             
-        ]);
+        // ]);
+        // if($request->file('image')){
+        //     $validatedData['image'] = $request->file('image')->store('post-images');
+        // }
       
-        wisata::create($request->all());
+        // wisata::create($request->all());
        
+        // return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditambahkan');
+
+        if ($files = $request->file('image')) {
+            $file = $request->file('image');
+            $lokasi = public_path('img/images');
+            $gambar =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
+            $pathImg = $file->storeAs('images', $gambar);
+            $files->move($lokasi, $gambar);
+            // $pesans = pesanan::all();
+            $wisata = new wisata();
+            $wisata->namaWisata = $request->namaWisata;
+            $wisata->hargaWisata = $request->hargaWisata;
+            $wisata->image = $pathImg;
+            $wisata->map = $request->map;
+            $wisata->deskripsiWisata = $request->deskripsiWisata;
+            $wisata->lokasiWisata = $request->lokasiWisata;
+            $wisata->save();
         return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditambahkan');
+
+        }
     }
     public function edit(wisata $wisata)
     {
         return view('dashboard.wisata.editwisata',compact('wisata'));
     }
 
-    public function update(Request $request, wisata $wisata)
+    public function update($id, Request $request)
     {
-        $request->validate([
-            'namaWisata' => 'required',
-            'hargaWisata' => 'required',
-            'deskripsiWisata' => 'required',
-            'lokasiWisata' => 'required',
-        ]);
+        // $request->validate([
+        //     'namaWisata' => 'required',
+        //     'hargaWisata' => 'required',
+        //     'deskripsiWisata' => 'required',
+        //     'lokasiWisata' => 'required',
+        // ]);
       
-        $wisata->update($request->all());
+        // $wisata->update($request->all());
       
-        return redirect('/wisatapost')->with('success','Wisata edited successfully.');
+        // return redirect('/wisatapost')->with('success','Wisata edited successfully.');
+
+        if ($files = $request->file('image')) {
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $file = $request->file('image');
+            $lokasi = public_path('img/images');
+            $gambar =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
+            $pathImg = $file->storeAs('images', $gambar);
+            $files->move($lokasi, $gambar);
+            $wisatas = wisata::all();
+            $wisata = $wisatas->find($id);
+            $wisata->namaWisata = $request->namaWisata;
+            $wisata->hargaWisata = $request->hargaWisata;
+            $wisata->image = $pathImg;
+            $wisata->map = $request->map;
+            $wisata->deskripsiWisata = $request->deskripsiWisata;
+            $wisata->lokasiWisata = $request->lokasiWisata;
+            $wisata->save();
+        return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditubah');
+
+        }
     }
 
     public function deletewisata($id) {
@@ -86,6 +133,15 @@ class WisataController extends Controller
             "title" => "Detail Wisata",
             "detailwisata" => wisata::findOrFail($id)
     
+        ]);
+    }
+
+    public function wisatawisata(){
+
+        return view('userarea.wisata.wisatawisata', [
+            "title" => "Wisata Wisata",
+            "wisatas" => wisata::paginate(8)->withQueryString()
+
         ]);
     }
 }

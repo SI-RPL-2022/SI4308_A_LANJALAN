@@ -147,7 +147,13 @@ class PemesananController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+    }
+    public function deletepesanan($id)
+    {
+        $pesanan = pesanan::find($id);
+        $pesanan->delete();
+        return redirect('/riwayatpesanan')->with('success','Pesanan berhasil dibatalkan');
     }
 
     public function riwayatpesanan()
@@ -155,6 +161,18 @@ class PemesananController extends Controller
         return view('riwayatpesanan', [
             "title" => "Riwayat Pesanan",
             "pesanan" => pesanan::all(),
+    
+        ]);
+
+    }
+    public function tiketpesanan($id)
+    {
+        return view('tiketpesanan', [
+            "title" => "Tiket Pesanan",
+            // "pesanan" => $pesanan
+            "pesanan" => pesanan::findOrFail($id),
+            "wisata" => wisata::findOrFail($id),
+            "bundle" => bundle::findOrFail($id),
     
         ]);
 
@@ -169,8 +187,6 @@ class PemesananController extends Controller
     
         ]);
 
-        // $pesan = $request->session()->get('pesan');
-        // return view('konfirmasi',compact('pesan', $pesan));
     }
     public function storebukti(Request $request, $id){
         if ($request->file('buktiTf')) {
@@ -190,8 +206,23 @@ class PemesananController extends Controller
 
     }
 
-
-   
-    
-    
+    public function reschedule($id, Request $request )
+    {
+     
+            $pesans = pesanan::all();
+            $pesan = $pesans->find($id);
+            // $pesan = $pesanan;
+            $pesan->status = $request->status;
+            $pesan->tanggal = $request->tanggal;
+            // $pesan->travelAgent_id = $request->travelAgent_id;
+            $pesan->save();
+            // $request->validate([
+            //     'status' => 'required',
+            //     'tanggal' => 'required',
+            // ]);
+            
+            // $pesanan->update($request->all());
+            return redirect('/riwayatpesanan')->with('success','Reschedule berhasil diajukan.');
+        
+    }
 }

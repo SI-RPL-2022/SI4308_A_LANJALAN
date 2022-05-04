@@ -70,4 +70,12 @@ class BundleController extends Controller
     
         ]);
     }
+    public function bundlebundle(){
+
+        return view('userarea.bundle.bundlebundle', [
+            "title" => "Bundle Bundle",
+            "bundles" => bundle::paginate(8)->withQueryString()
+
+        ]);
+    }
 }

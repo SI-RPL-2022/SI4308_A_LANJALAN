@@ -13,39 +13,54 @@
         </div>
     @endif
 @if ($wisatas->count())
-{{-- card --}}
-            <div class="flex-wrap justify-content-center d-flex py-3">
-                @foreach ($wisatas as $p)
-                    
-                <div class="mx-2 my-2">
-                    <a href="/detailwisata/{{ $p->id }}" class="text-decoration-none link-dark">
-                        <div class="card " style="width: 14rem;">
-                            <img src="img/papuma.jpg" class="card-img-top  imgcard" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $p->namaWisata}}</h5>
-                                <p class="card-text p-0 m-0">{{ $p->lokasiWisata }}</p>
-                                <p class="card-text p-0 m-0">Rp{{ $p->hargaWisata }}</p>
-                                <p class="card-text ">{{ Str::words($p->deskripsiWisata, 6) }}</p>
-                                <div class="mt-2">
-                                    <a href="{{ route('wisatas.edit',$p->id) }}">
-                                        <button class="btn btn-warning">Edit</button>
-                                    </a>
-                                    <a href="{{ route('deletewisata', ['id' => $p->id]) }}">
-                                        <button class="btn btn-danger">Delete</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+{{-- table --}}
+@php
+$i=0;    
+@endphp
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Lokasi</th>
+            <th>Harga</th>
+            <th>Gambar</th>
+            <th>Map</th>
+            <th>Deskripsi</th>
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($wisatas as $p)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $p->namaWisata }}</td>
+            <td>{{ $p->lokasiWisata }}</td>
+            <td>{{ $p->hargaWisata }}</td>
+            <td ><img class="gambarwisatasmall" src="{{ asset('storage/' . $p->image)  }}"></td>
+            <td>
+            @if ($p->map != null)
+                <p class="text-success">Active</p>
+            @else
+                <p class="">Nothing</p>
+            @endif    
+            </td>
+            <td>{{ Str::words($p->deskripsiWisata,4) }}</td>
+            <td>
+                <form action="" method="POST">
+   
+                    <a class="btn btn-info" href="/detailwisata/{{$p->id}}">Show</a>
+    
+                    <a class="btn btn-warning" href="{{ route('wisatas.edit',$p->id) }}">Edit</a>
+      
+                    <a href="{{ route('deletewisata', ['id' => $p->id]) }}" type="submit" class="btn btn-danger">Delete</a>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+    <div class="mt-3 d-flex justify-content-center">
+        {!! $wisatas->links('pagination::bootstrap-4') !!}
+    </div>
 
-                @endforeach
-
-            </div>
-            <div class="mt-3 d-flex justify-content-center">
-                {{ $wisatas->links('pagination::bootstrap-4') }}   
-            </div> 
-{{-- card close --}}
+{{-- table close --}}
 @else
 <p class="text-center fs-5 fw-bold p-0 m-0">No Wisata Post Found.</p>
 <p class="text-center p-0 m-0">Please add some vacation in Tambah Post Wisata</p>

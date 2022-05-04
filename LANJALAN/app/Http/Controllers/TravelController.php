@@ -53,4 +53,14 @@ class TravelController extends Controller
        
         return redirect('/travelpost')->with('success','Travel created successfully.');
     }
+    
+    public function traveltravel(){
+
+        return view('userarea.travel.traveltravel', [
+            "title" => "Travel Travel",
+            "travelagentpost" => travel_agent::paginate(8)->withQueryString()
+
+        ]);
+    }
+    
 }

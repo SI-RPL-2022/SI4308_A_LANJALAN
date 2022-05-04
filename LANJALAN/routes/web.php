@@ -67,13 +67,19 @@ Route::get('/pesan/{id}', [PemesananController::class, 'show'])->name('pesan');
 Route::resource('pemesanan', PemesananController::class); //pesan Wisata dan update 
 Route::get('/konfirmasi/{id}', [PemesananController::class, 'konfirmasi'])->name('konfirmasi');
 Route::get('/riwayatpesanan', [PemesananController::class, 'riwayatpesanan']);
+Route::get('/riwayatpesanan/{id}', [PemesananController::class, 'deletepesanan'])->name('deletepesanan');
 Route::get('/pesanBundle/{id}', [PemesananController::class, 'showBundle'])->name('showBundle'); //show pesan bundle
 Route::post('/pesanBundle', [PemesananController::class, 'storeBundle'])->name('storeBundle'); //post pesan bundle
 
+Route::get('/tiketpesanan/{id}', [PemesananController::class, 'tiketpesanan'])->name('tiketpesanan');
+Route::post('/tiketpesanan/{id}', [PemesananController::class, 'reschedule'])->name('reschedule'); //post pesan bundle
 
 
 //user
 Route::get('/wisatadetail/{id}', [WisataController::class, 'wisatadetailuser']);
+Route::get('/wisatawisata', [WisataController::class, 'wisatawisata']);
 Route::get('/bundleuser/{id}', [BundleController::class, 'bundleuser']);
-
+Route::get('/bundlebundle', [BundleController::class, 'bundlebundle']);
+Route::get('/traveltravel', [TravelController::class, 'traveltravel']);
+//detailtravelnanti disini -----------------
 

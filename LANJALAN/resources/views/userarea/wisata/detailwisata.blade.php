@@ -7,10 +7,12 @@
                 <h3 class="text-center">{{ $detailwisata->namaWisata }}</h3>
             </div>
 
-            <div class="text-center m-5">
-            <img class= "w-50" src="/img/papuma.jpg" alt=" ">
+            <div class="d-flex g-2 text-center m-5">
+                <img class= "w-50" src="{{ asset('storage/' . $detailwisata->image)  }}" alt=" ">
+                <div class="gmap_canvas ms-3"><iframe width="500" height="300" id="gmap_canvas" src="{{ $detailwisata->map }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             </div>
             <hr>
+            
             <form class="me-auto">
                 <div class="mb-3">
                     <label  class="form-label fw-bold">Harga :</label>
@@ -28,5 +30,6 @@
                     <a  href="{{route('pesan', ['id' => $detailwisata->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailwisata->hargaWisata }}</a>
                 </div>
             </form>
+            
     </div>   
 @endsection
