@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('bundles', function (Blueprint $table) {
             $table->id();
             $table->string('judulBundle');
+            $table->string('image');//baru
             $table->integer('hargaBundle');
             $table->text('deskripsiBundle');
             $table->date('tanggalExpBundle');

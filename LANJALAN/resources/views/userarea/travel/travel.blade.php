@@ -11,7 +11,7 @@
                     <div class="mx-2 my-2">
                         <a href="/detailwisata/{{ $p->id }}" class="text-decoration-none link-dark">
                             <div class="card border-0" style="width: 14rem;">
-                                <img src="img/papuma.jpg" class="card-img-top  imgcard" alt="">
+                                <img src="{{ asset('storage/' . $p->image)  }}" class="card-img-top  imgcard" alt="">
                                 <div class="pt-2">
                                     <h6 class=" mb-0">{{ $p->name}}</h6>
                                 </div>

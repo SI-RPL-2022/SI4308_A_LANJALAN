@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         //travel-------------------------------------------------------------
         DB::table('travel_agents')->insert([
             'name' => 'Panorama Destination',
+            'image' => 'images/panorama.png',//baru
             'email' => 'PanoramaDestination@gmail.com',
             'username' => 'panorama',
             'level' => 'travel',
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('travel_agents')->insert([
             'name' => 'Butik Trip',
+            'image' => 'images/butiktrip.jpg',//baru
             'email' => 'ButikTrip@gmail.com',
             'username' => 'butiktrip',
             'level' => 'travel',
@@ -48,6 +50,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'Bayubuana',
+            'image' => 'images/bayabuana.png',//baru
             'email' => 'Bayubuana@gmail.com',
             'username' => 'bayubuana',
             'level' => 'travel',
@@ -55,6 +58,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'MMBC',
+            'image' => 'images/mmbc.png',//baru
             'email' => 'MMBC@gmail.com',
             'username' => 'mmbc',
             'level' => 'travel',
@@ -62,6 +66,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('travel_agents')->insert([
             'name' => 'Darmawisata Indonesiap',
+            'image' => 'images/darmawisata.png',//baru
             'email' => 'DarmawisataIndonesia@gmail.com',
             'username' => 'darmawisata',
             'level' => 'travel',
@@ -72,30 +77,35 @@ class DatabaseSeeder extends Seeder
         //bundles-------------------------------------------------------------
         DB::table('bundles')->insert([
             'judulBundle' => 'Liburan Ramadhan di Bali',
+            'image' => 'images/bundle1.jpg',//baru
             'hargaBundle' => '1500000',
             'deskripsiBundle' => 'Pergi muter-muter ke berbagai wisata Bali. Nusa Dua, Nusa Penida, Kuta, Pulau Penyu, Garuda Wisnu Kencana ',
             'tanggalExpBundle' => '2023-01-01',
         ]);
         DB::table('bundles')->insert([
             'judulBundle' => 'Road to Gunung Jawa',
+            'image' => 'images/bundle2.jpg',//baru
             'hargaBundle' => '3000000',
             'deskripsiBundle' => 'Disana gunung disini gunung ditengah-tengahnya ada pulau Jawa! daripada bingung mending kita ngedaki gunung di Pulau Jawa!!. Gunung Bromo, Gunung Semeru, dan Gunung Rinjani',
             'tanggalExpBundle' => '2023-02-01',
         ]);
         DB::table('bundles')->insert([
             'judulBundle' => 'Pantai Yuk!',
+            'image' => 'images/bundle3.png',//baru
             'hargaBundle' => '900000',
             'deskripsiBundle' => 'Nyantai! Nyaman di Pantai!. Papuma, Pasir Putih Situbondo, Nusa Dua, Nusa Penida, Kuta, Pulau Penyu, Garuda Wisnu Kencana ',
             'tanggalExpBundle' => '2023-04-01',
         ]);
         DB::table('bundles')->insert([
             'judulBundle' => 'Wisata Sumatera',
+            'image' => 'images/bundle4.jpg',//baru
             'hargaBundle' => '2000000',
             'deskripsiBundle' => 'Menjelajahi Pulau Sumatera. Jembatan Ampera, Pantai Panjang, Rumah Soekarno Bengkulu, dan Benteng Malioboro',
             'tanggalExpBundle' => '2023-01-01',
         ]);
         DB::table('bundles')->insert([
             'judulBundle' => 'Pulau ke Pulau!',
+            'image' => 'images/bundle5.jpg',//baru
             'hargaBundle' => '3000000',
             'deskripsiBundle' => 'Berangkat dari pulau ke pulau. Berawal dari Pulau Jawa - Sumatera, Kalimantan, Sulawesi, Papua, Hingga Akhir ke BalI!!!',
             'tanggalExpBundle' => '2023-01-05',
