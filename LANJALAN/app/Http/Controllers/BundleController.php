@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\bundle;
+use Illuminate\Support\Facades\Storage;
 
 class BundleController extends Controller
 {
@@ -22,14 +23,31 @@ class BundleController extends Controller
   
     public function store(Request $request)
     {
-        $request->validate([
-            'judulBundle' => 'required',
-            'hargaBundle' => 'required',
-            'deskripsiBundle' => 'required',
-            'tanggalExpBundle' => 'required',
-        ]);
+
+        if ($files = $request->file('image')) {
+            $file = $request->file('image');
+            $lokasi = public_path('img/images');
+            $gambar =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
+            $pathImg = $file->storeAs('images', $gambar);
+            $files->move($lokasi, $gambar);
+            // $pesans = pesanan::all();
+            $travel = new bundle();
+            $travel->judulBundle = $request->judulBundle;
+            $travel->hargaBundle = $request->hargaBundle;
+            $travel->deskripsiBundle = $request->deskripsiBundle;
+            $travel->tanggalExpBundle = $request->tanggalExpBundle;
+            $travel->image = $pathImg;
+            $travel->save();
+    
+        }
+        // $request->validate([
+        //     'judulBundle' => 'required',
+        //     'hargaBundle' => 'required',
+        //     'deskripsiBundle' => 'required',
+        //     'tanggalExpBundle' => 'required',
+        // ]);
       
-        bundle::create($request->all());
+        // bundle::create($request->all());
        
         return redirect('/bundles')->with('success','Bundle created successfully.');
     }
@@ -39,25 +57,44 @@ class BundleController extends Controller
         return view('dashboardtravel.bundle.editbundle',compact('bundle'));
     }
 
-    public function update(Request $request, bundle $bundle)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'judulBundle' => 'required',
-            'hargaBundle' => 'required',
-            'deskripsiBundle' => 'required',
-            'tanggalExpBundle' => 'required',
-        ]);
-      
-        $bundle->update($request->all());
-      
+        if ($files = $request->file('image')) {
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $file = $request->file('image');
+            $lokasi = public_path('img/images');
+            $gambar =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
+            $pathImg = $file->storeAs('images', $gambar);
+            $files->move($lokasi, $gambar);
+            $bundles = bundle::all();
+            $bundle = $bundles->find($id);
+            $bundle->judulBundle = $request->judulBundle;
+            $bundle->hargaBundle = $request->hargaBundle;
+            $bundle->image = $pathImg;
+            $bundle->deskripsiBundle = $request->deskripsiBundle;
+            $bundle->tanggalExpBundle = $request->tanggalExpBundle;
+            $bundle->save();
         return redirect('/bundles')->with('success','Bundle edited successfully.');
+
+        }
+        // $request->validate([
+        //     'judulBundle' => 'required',
+        //     'hargaBundle' => 'required',
+        //     'deskripsiBundle' => 'required',
+        //     'tanggalExpBundle' => 'required',
+        // ]);
+      
+        // $bundle->update($request->all());
+      
     }
 
     public function show($id){
 
         return view('dashboardtravel.bundle.detailbundle', [
             "title" => "Detail Bundle",
-            "detailbundle" => bundle::findOrFail($id)
+            "detailbundle" => bundle::find($id)
     
         ]);
     }
@@ -66,7 +103,7 @@ class BundleController extends Controller
 
         return view('userarea.bundle.detailbundle', [
             "title" => "Detail Bundle",
-            "detailbundle" => bundle::findOrFail($id)
+            "detailbundle" => bundle::find($id)
     
         ]);
     }

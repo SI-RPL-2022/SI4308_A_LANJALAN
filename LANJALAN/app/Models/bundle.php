@@ -10,9 +10,9 @@ class bundle extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    protected $fillable = [
-        'judulBundle', 'hargaBundle', 'deskripsiBundle', 'tanggalExpBundle'
-    ];
+    // protected $fillable = [
+    //     'judulBundle', 'hargaBundle', 'deskripsiBundle', 'tanggalExpBundle'
+    // ]; //ganti
 
     public function wisata(){
         return $this->hasMany(wisata::class);

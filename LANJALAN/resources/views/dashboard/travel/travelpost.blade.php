@@ -11,35 +11,47 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-@if ($travelagentpost->count())
-{{-- card --}}
-            <div class="flex-wrap justify-content-center d-flex py-3">
-                @foreach ($travelagentpost as $p)
-                    
-                <div class="mx-2 my-2">
-                    <a href="/detailtravel/{{ $p->id }}" class="text-decoration-none link-dark">
-                        <div class="card " style="width: 16rem;">
-                            <img src="img/travel.jpg" class="card-img-top imgcard" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $p->name}}</h5>
-                                <p class="card-text p-0 m-0 text-wrap">{{ $p->email }}</p>
-                                <div class="mt-2">
-                                    <a href="{{ route('deletetravelpost', ['id' => $p->id , 'email' => $p->email]) }}">
-                                        <button class="btn btn-danger">Delete</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+    @if ($travelagentpost->count())
+    {{-- table --}}
+    @php
+    $i=0;    
+    @endphp
+        <table class="table table-bordered">
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Gambar</th>
+                <th width="280px">Action</th>
+            </tr>
+            @foreach ($travelagentpost as $p)
+            <tr>
+                <td>{{ ++$i }}</td>
+                <td>{{ $p->name }}</td>
+                <td>{{ $p->email }}</td>
+                <td>{{ $p->username }}</td>
+                <td ><img class="gambarwisatasmall" src="{{ asset('storage/' . $p->image)  }}"></td>
+                <td>
+                    <form action="" method="POST">
+       
+                        <a class="btn btn-info" href="/detailtravel/{{$p->id}}">Show</a>
+        
+                        {{-- <a class="btn btn-warning" href="{{ route('travel.edit',$p->id) }}">Edit</a> --}}
+          
+                        {{-- <a href="{{ route('deletetravel', ['id' => $p->id]) }}" type="submit" class="btn btn-danger">Delete</a> --}}
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </table>
+        <div class="mt-3 d-flex justify-content-center">
+            {!! $travelagentpost->links('pagination::bootstrap-4') !!}
+        </div>
+    
+    {{-- table close --}}
 
-                @endforeach
 
-            </div>
-            <div class="mt-3 d-flex justify-content-center">
-                {{ $travelagentpost->links('pagination::bootstrap-4') }}   
-            </div> 
-{{-- card close --}}
 @else
 <p class="text-center fs-5 fw-bold p-0 m-0">No Travel Agent Post Found.</p>
 <p class="text-center p-0 m-0">Please add some Travel in Tambah Post Travel</p>

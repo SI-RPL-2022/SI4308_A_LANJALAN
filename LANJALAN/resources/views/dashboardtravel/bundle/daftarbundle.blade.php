@@ -22,6 +22,7 @@
         <tr>
             <th>No</th>
             <th>Judul Tiket Bundle</th>
+            <th>Gambar</th>
             <th>Harga Tiket Bundle</th>
             <th>Tanggal Expired Tiket Bundle</th>
             <th width="280px">Action</th>
@@ -30,6 +31,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $bundle->judulBundle }}</td>
+            <td ><img class="gambarwisatasmall" src="{{ asset('storage/' . $bundle->image)  }}"></td>
             <td>{{ $bundle->hargaBundle }}</td>
             <td>{{ $bundle->tanggalExpBundle }}</td>
             <td>

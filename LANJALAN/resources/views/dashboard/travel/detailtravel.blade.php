@@ -10,7 +10,7 @@
 </div>
    <!-- show buku -->
         <div class="text-center m-5">
-        <img class= "w-50" src="/img/travel.jpg" alt=" ">
+        <img class= "w-50" src="{{ asset('storage/' . $detailtravel->image)  }}" alt=" ">
         </div>
         <hr>
          <form class="me-auto">

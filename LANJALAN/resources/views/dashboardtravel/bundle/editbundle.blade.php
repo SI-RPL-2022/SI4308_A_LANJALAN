@@ -20,13 +20,21 @@
     </div>
 @endif
    
-<form action="{{ route('bundles.update',$bundle->id) }}" method="POST">
+<form action="{{ route('bundles.update',$bundle->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nama Bundle</label>
         <input type="text" class="form-control" id="judulBundle" placeholder="Nama Bundle" name="judulBundle" value="{{ $bundle->judulBundle }}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Gambar</label>
+        <input type="hidden" name="oldImage" value="{{ $bundle->image }}">
+        <div class="mb-3">
+        <img src="{{ asset('storage/' . $bundle->image)  }}" alt="" class="img-preview img-fluid w-25">
+        </div>
+        <input type="file" class="form-control" id="image"  name="image" onchange="previewImage()">
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Harga Bundle</label>
@@ -43,4 +51,18 @@
     <button type="submit" class="btn btn-primary">Submit</button>
    
 </form>
+<script>
+    function previewImage(){
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+    
+        imgPreview.style.display = 'block';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+    
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+    </script>
 @endsection

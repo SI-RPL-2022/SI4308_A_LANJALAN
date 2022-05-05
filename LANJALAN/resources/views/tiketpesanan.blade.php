@@ -45,10 +45,6 @@
             </p>
         </div>
         <div class="p-3 bg-light">
-          {{-- <form action="{{ route('pemesanan.update', $pesanan->id) }}" method="POST" enctype="multipart/form-data"> --}}
-            
-            {{-- @method('PUT') --}}
-
             <div class="row">
               
                   <div class="row">
@@ -77,7 +73,6 @@
               </div>
             </div>
           </div>
-          {{-- </form> --}}
         </div>
         <div class="d-flex mt-3">
           <div class="me-auto">
@@ -104,7 +99,6 @@
           <input type="hidden" class="form-control" id=""  name="status" value="mengajukan reschedule">
 
           <input type="date" class="form-control" id=""  name="tanggal" value="{{ $pesanan->tanggal }}">
-          {{-- <input type="hidden" class="form-control" id=""  name="travelAgent_id" value="{{ $pesanan->travelAgent_id }}"> --}}
 
         </div>
         <div class="modal-footer">

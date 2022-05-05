@@ -66,9 +66,9 @@ class PemesananController extends Controller
     {
         return view('pemesanan', [
             "title" => "Pemesanan",
-            "wisata" => wisata::findOrFail($id),
+            "wisata" => wisata::find($id),
             "travel" => travel_agent::all(),
-            "pesanan" => pesanan::findOrFail($id),
+            "pesanan" => pesanan::find($id),
     
         ]);
     }
@@ -77,9 +77,9 @@ class PemesananController extends Controller
     {
         return view('pemesananBundle', [
             "title" => "Pemesanan Bundle",
-            "bundle" => bundle::findOrFail($id),
+            "bundle" => bundle::find($id),
             "travel" => travel_agent::all(),
-            "pesanan" => pesanan::findOrFail($id),
+            "pesanan" => pesanan::find($id),
     
         ]);
     }
@@ -170,9 +170,9 @@ class PemesananController extends Controller
         return view('tiketpesanan', [
             "title" => "Tiket Pesanan",
             // "pesanan" => $pesanan
-            "pesanan" => pesanan::findOrFail($id),
-            "wisata" => wisata::findOrFail($id),
-            "bundle" => bundle::findOrFail($id),
+            "pesanan" => pesanan::find($id),
+            "wisata" => wisata::find($id),
+            "bundle" => bundle::find($id),
     
         ]);
 
@@ -183,7 +183,7 @@ class PemesananController extends Controller
         return view('konfirmasi', [
             "title" => "Konfirmasi",
             
-            "pesanan" => pesanan::findOrFail($id),
+            "pesanan" => pesanan::find($id),
     
         ]);
 
@@ -192,7 +192,7 @@ class PemesananController extends Controller
         if ($request->file('buktiTf')) {
             $files = $request->file('buktiTf');
             $lokasi = public_path('/img/images/');
-            $gambarbuktiTf =  date('YmdHi').$files->getClientOriginalExtension();
+            $gambarbuktiTf =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
             // $pathImg = $files->storeAs('images', $gambarbuktiTf);
             $files->move($lokasi, $gambarbuktiTf);
             $pesans = pesanan::all();

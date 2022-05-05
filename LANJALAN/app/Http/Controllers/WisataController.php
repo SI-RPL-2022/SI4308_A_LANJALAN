@@ -28,7 +28,7 @@ class WisataController extends Controller
 
         return view('dashboard.wisata.detailwisata', [
             "title" => "Detail Wisata",
-            "detailwisata" => wisata::findOrFail($id)
+            "detailwisata" => wisata::find($id)
     
         ]);
     }
@@ -113,7 +113,7 @@ class WisataController extends Controller
             $wisata->deskripsiWisata = $request->deskripsiWisata;
             $wisata->lokasiWisata = $request->lokasiWisata;
             $wisata->save();
-        return redirect('/wisatapost')->with('success','Objek Wisata berhasil ditubah');
+        return redirect('/wisatapost')->with('success','Objek Wisata berhasil diubah');
 
         }
     }
@@ -131,7 +131,7 @@ class WisataController extends Controller
 
         return view('userarea.wisata.detailwisata', [
             "title" => "Detail Wisata",
-            "detailwisata" => wisata::findOrFail($id)
+            "detailwisata" => wisata::find($id)
     
         ]);
     }

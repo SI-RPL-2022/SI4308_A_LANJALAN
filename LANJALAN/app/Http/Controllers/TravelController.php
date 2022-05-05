@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\travel_agent;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 
 class TravelController extends Controller
@@ -20,7 +21,7 @@ class TravelController extends Controller
 
         return view('dashboard.travel.detailtravel', [
             "title" => "Detail Travel",
-            "detailtravel" => travel_agent::findOrFail($id)
+            "detailtravel" => travel_agent::find($id)
     
         ]);
     }
@@ -41,14 +42,30 @@ class TravelController extends Controller
   
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'username' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-      
-        travel_agent::create($request->all());
+        if ($files = $request->file('image')) {
+            $file = $request->file('image');
+            $lokasi = public_path('img/images');
+            $gambar =  rand(1000, 20000) . "." . $files->getClientOriginalExtension();
+            $pathImg = $file->storeAs('images', $gambar);
+            $files->move($lokasi, $gambar);
+            // $pesans = pesanan::all();
+            $travel = new travel_agent();
+            $travel->name = $request->name;
+            $travel->email = $request->email;
+            $travel->password = $request->password;
+            $travel->username = $request->username;
+            $travel->level = $request->level;
+            $travel->image = $pathImg;
+            $travel->save();
+    
+        }
+        // $request->validate([
+        //     'name' => 'required',
+        //     'username' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        // ]);
+        // travel_agent::create($request->all());
         User::create($request->all());
        
         return redirect('/travelpost')->with('success','Travel created successfully.');
