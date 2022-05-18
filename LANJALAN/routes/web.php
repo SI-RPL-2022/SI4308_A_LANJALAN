@@ -61,6 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //travel agent
 Route::resource('bundles', BundleController::class);
+Route::get('/bundle/{id}', [BundleController::class, 'deletebundle'])->name('deletebundle');
 
 //pemesanan
 Route::get('/pesan/{id}', [PemesananController::class, 'show'])->name('pesan');

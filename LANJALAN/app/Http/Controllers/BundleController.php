@@ -115,4 +115,11 @@ class BundleController extends Controller
 
         ]);
     }
+
+    public function deletebundle($id) {
+        $bundle = bundle::find($id);
+        $bundle->delete();
+        return redirect('/bundles')->with('Success','Paket bundle wisata berhasil dihapus');
+    }
+
 }
