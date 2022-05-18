@@ -27,8 +27,10 @@ use App\Http\Controllers\PemesananController;
 //     });
 
 // Route::get('/', function () {return view('landing', ["title" => "Lanjalan", "wisatas" => wisata::paginate(4)->withQueryString() ]);});
-Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
 Route::get('/', [AuthController::class, 'landing'])->name('landing');
+Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::resource('users', UserController::class);
 
 //admin -> wisata
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
