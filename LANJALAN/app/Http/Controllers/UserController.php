@@ -32,7 +32,6 @@ class UserController extends Controller
         //     'password' => 'required',
         // ]);
         // travel_agent::create($request->all());
-        User::create($request->all());
        
         return redirect('/login')->with('success','User created successfully.');
     }
