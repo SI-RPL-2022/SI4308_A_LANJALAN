@@ -8,6 +8,7 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BundleController;
 use App\Models\wisata;
 use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\UserController;
 
 
 /*

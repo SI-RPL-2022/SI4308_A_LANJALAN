@@ -44,7 +44,8 @@
                                     </div>
                                     <div class="card-body">
                                         <form action="{{ route('users.store') }}" method="POST" id="logForm">
-                                            {{ csrf_field() }}
+                                        @csrf
+                                        @method('POST')
                                             <div class="form-group">
                                                 {{-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                                     <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
@@ -84,11 +85,11 @@
                                                     name="password"
                                                     placeholder="Buat password"/>
                                             </div>
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control  py-4" id="level" name="level" value="user">
+                                            </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary btn-block" type="submit" style="border-radius: 0.5rem">Buat Akun</button>
-                                            </div>
-                                            <div class="mb-3">
-                                                <input type="hidden" class="form-control" id="level" name="user" value="user">
                                             </div>
                                         </form>
                                     </div>
