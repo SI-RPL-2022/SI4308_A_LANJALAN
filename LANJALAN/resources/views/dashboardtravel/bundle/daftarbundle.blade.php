@@ -41,7 +41,7 @@
     
                     <a class="btn btn-primary" href="{{ route('bundles.edit',$bundle->id) }}">Edit</a>
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <a href="{{ route('deletebundle', ['id' => $bundle->id]) }}" type="submit" class="btn btn-danger">Delete</a>
                 </form>
             </td>
         </tr>

@@ -5,8 +5,8 @@
 <h2>Wisata Detail</h2>
 <div class="mt-3 mb-3">
     <div class=" ">
-        <a href="{{ route('wisatas.edit',$detailwisata->id) }}" class="btn btn-warning">Edit</a>
-        <a href="{{ route('deletewisata', ['id' => $detailwisata->id]) }}" class="btn btn-danger">Delete</a>
+       <!-- <a href="{{ route('wisatas.edit',$detailwisata->id) }}" class="btn btn-warning">Edit</a>
+        <a href="{{ route('deletewisata', ['id' => $detailwisata->id]) }}" class="btn btn-danger">Delete</a>-->
     </div>
 </div>
    <!-- show Detail Wisata -->

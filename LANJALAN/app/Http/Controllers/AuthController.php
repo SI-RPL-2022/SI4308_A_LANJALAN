@@ -21,8 +21,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function index()
-    {
+    public function register(){
+        return view('register');
+    }
+
+    public function index() {
         if ($user = Auth::user()) {
             if ($user->level == 'admin') {
                 return redirect()->intended('admin');

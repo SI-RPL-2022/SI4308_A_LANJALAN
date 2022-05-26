@@ -5,7 +5,7 @@
 <h2>Travel Detail</h2>
 <div class="mt-3 mb-3">
     <div class=" ">
-        <a href="/" class="btn btn-danger">Delete</a>
+        <!-- <a href="/" class="btn btn-danger">Delete</a> -->
     </div>
 </div>
    <!-- show buku -->

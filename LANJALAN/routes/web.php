@@ -8,6 +8,7 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BundleController;
 use App\Models\wisata;
 use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -27,8 +28,10 @@ use App\Http\Controllers\PemesananController;
 //     });
 
 // Route::get('/', function () {return view('landing', ["title" => "Lanjalan", "wisatas" => wisata::paginate(4)->withQueryString() ]);});
-Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
 Route::get('/', [AuthController::class, 'landing'])->name('landing');
+Route::get('/login', function () {return view('login', ["title" => "Log In"]);});
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::resource('users', UserController::class);
 
 //admin -> wisata
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
@@ -61,6 +64,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //travel agent
 Route::resource('bundles', BundleController::class);
+Route::get('/bundle/{id}', [BundleController::class, 'deletebundle'])->name('deletebundle');
 
 //pemesanan
 Route::get('/pesan/{id}', [PemesananController::class, 'show'])->name('pesan');
