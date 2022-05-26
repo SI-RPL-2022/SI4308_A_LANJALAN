@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('buktiTf')->nullable();
             $table->string('status')->nullable();
             $table->date('tanggal');
-            $table->foreignId('travelAgent_id');
+            $table->foreignId('travel_agent_id');
             $table->timestamps();
 
         });

@@ -17,6 +17,9 @@ class travel_agent extends Model
     public function wisata(){
         return $this->hasMany(wisata::class);
     }
+    public function pesanan(){
+        return $this->hasMany(pesanan::class);
+    }
 
     public function setPasswordAttribute($password){
         $this->attributes['password'] = bcrypt($password);

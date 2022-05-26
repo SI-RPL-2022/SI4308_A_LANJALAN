@@ -75,7 +75,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Pilih Travel Agent</label>
-        <select name="travelAgent_id" class="form-select" aria-label="Default select example">
+        <select name="travel_agent_id" class="form-select" aria-label="Default select example">
             @foreach ($travel as $t)
             <option value="{{ $t->id }}">{{ $t->name }}</option>
             @endforeach

@@ -47,7 +47,7 @@ class PemesananController extends Controller
             'buktiTf' => 'required',
             'status' => 'required',
             'tanggal' => 'required',
-            'travelAgent_id' => 'required',
+            'travel_agent_id' => 'required',
 
         ]);
       
@@ -94,7 +94,7 @@ class PemesananController extends Controller
             'buktiTf' => 'required',
             'status' => 'required',
             'tanggal' => 'required',
-            'travelAgent_id' => 'required',
+            'travel_agent_id' => 'required',
 
         ]);
       
@@ -214,7 +214,7 @@ class PemesananController extends Controller
             // $pesan = $pesanan;
             $pesan->status = $request->status;
             $pesan->tanggal = $request->tanggal;
-            // $pesan->travelAgent_id = $request->travelAgent_id;
+            // $pesan->travel_agent_id = $request->travel_agent_id;
             $pesan->save();
             // $request->validate([
             //     'status' => 'required',

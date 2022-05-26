@@ -11,9 +11,10 @@ class wisata extends Model
 
 
     protected $guarded = ['id'];
+    // protected $primaryKey = ['id'];
 
     public function pesanan(){
-        return $this->belongsTo(pesanan::class);
+        return $this->hasMany(pesanan::class);
     }
     public function travel_agent(){
         return $this->belongsTo(travel_agent::class);

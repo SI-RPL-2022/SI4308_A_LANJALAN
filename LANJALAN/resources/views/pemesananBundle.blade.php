@@ -24,21 +24,30 @@
 
     <div class="mb-3 border  rounded p-3">
         <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Bundle</label>
+            <div class="col-2">
+                <img class="w-100" src="{{ asset('storage/' . $bundle->image)  }}">
             </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $bundle->judulBundle }}</label>
-                <input hidden type="text" class="form-control" id="bundle_id" name="bundle_id" value="{{ $bundle->id }}">
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-1">
+                        <label for="exampleFormControlInput1" class="form-label">Bundle</label>
+                    </div>
+                    <div class="col-11">
+                        <label for="exampleFormControlInput1" class="form-label">: {{ $bundle->judulBundle }}</label>
+                        <input hidden type="text" class="form-control" id="bundle_id" name="bundle_id" value="{{ $bundle->id }}">
+                    </div>
+                </div>
+            
+            
+            <div class="row">
+                <div class="col-1">
+                    <label for="exampleFormControlInput1" class="form-label">Harga</label>
+                </div>
+                <div class="col-11">
+                    <label for="exampleFormControlInput1" class="form-label">: Rp{{ $bundle->hargaBundle }}</label>
+                    <input hidden type="text" class="form-control" id="" name="totalHarga" value="{{ $bundle->hargaBundle }}">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <label for="exampleFormControlInput1" class="form-label">Harga</label>
-            </div>
-            <div class="col-11">
-                <label for="exampleFormControlInput1" class="form-label">: {{ $bundle->hargaBundle }}</label>
-                <input hidden type="text" class="form-control" id="" name="totalHarga" value="{{ $bundle->hargaBundle }}">
             </div>
         </div>
     </div>
@@ -61,7 +70,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Pilih Travel Agent</label>
-        <select name="travelAgent_id" class="form-select" aria-label="Default select example">
+        <select name="travel_agent_id" class="form-select" aria-label="Default select example">
             @foreach ($travel as $t)
             <option value="{{ $t->id }}">{{ $t->name }}</option>
             @endforeach

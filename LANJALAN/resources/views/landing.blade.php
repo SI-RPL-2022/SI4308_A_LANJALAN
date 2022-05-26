@@ -14,7 +14,7 @@
                     Travel With Us Now
                 </p>
                 <a href="">
-                    <button type="button" class="btn btn-lg btn-primary" style="margin-top: 1rem; border-radius: 0.75rem">Book Now</button>
+                    <a href="" type="button" class="btn btn-lg btn-primary" style="margin-top: 1rem; border-radius: 0.75rem">Book Now</a>
                 </a>
             </div>
         </div>

@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
             'buktiTf' => 'Belum Ada Foto',
             'status' => 'Belum Kirim Bukti',
             'tanggal' => '2022-04-06',
-            'travelAgent_id' => 1,
+            'travel_agent_id' => 1,
         ]);
 
         DB::table('pesanans')->insert([
@@ -136,7 +136,7 @@ class DatabaseSeeder extends Seeder
             'buktiTf' => 'Belum Ada Foto',
             'status' => 'Belum Kirim Bukti',
             'tanggal' => '2022-04-05',
-            'travelAgent_id' => 3,
+            'travel_agent_id' => 3,
         ]);
         //pesanans close-------------------------------------------------------------
         

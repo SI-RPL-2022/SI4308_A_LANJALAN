@@ -9,12 +9,16 @@ class pesanan extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-
+    // protected $primaryKey = ['id'];
+    // protected $with = ['wisata', 'bundle', 'travel_agent'];
     public function wisata(){
-        return $this->hasMany(wisata::class);
+        return $this->belongsTo(wisata::class);
     }
     public function bundle(){
-        return $this->hasMany(bundle::class);
+        return $this->belongsTo(bundle::class);
+    }
+    public function travel_agent(){
+        return $this->belongsTo(travel_agent::class);
     }
 
 }

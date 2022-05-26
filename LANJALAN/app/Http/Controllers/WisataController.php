@@ -28,8 +28,8 @@ class WisataController extends Controller
 
         return view('dashboard.wisata.detailwisata', [
             "title" => "Detail Wisata",
-            "detailwisata" => wisata::find($id)
-    
+            "detailwisata" => wisata::find($id),
+            
         ]);
     }
 
@@ -131,7 +131,8 @@ class WisataController extends Controller
 
         return view('userarea.wisata.detailwisata', [
             "title" => "Detail Wisata",
-            "detailwisata" => wisata::find($id)
+            "detailwisata" => wisata::find($id),
+            "wisatas" => wisata::paginate(4)->withQueryString()
     
         ]);
     }
@@ -140,7 +141,7 @@ class WisataController extends Controller
 
         return view('userarea.wisata.wisatawisata', [
             "title" => "Wisata Wisata",
-            "wisatas" => wisata::paginate(8)->withQueryString()
+            "wisatas" => wisata::paginate(12)->withQueryString()
 
         ]);
     }

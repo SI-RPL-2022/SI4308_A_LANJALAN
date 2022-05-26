@@ -73,7 +73,7 @@ $tomorrow = date("l, Y-m-d", strtotime("+2 day"));
         </div>
         <div class="bg-secondary px-2 py-1">
           <p class="text-light fw-light m-0">
-            Silahkan Upload Foto Bukti transfer dibawah ini sebelum <b><?= $tomorrow ?></b>
+            Silahkan Upload Foto Bukti transfer dibawah ini sebelum <b class="text-light fw-bold"><?= $tomorrow ?></b>
             </p>
         </div>
         <div class="p-3 bg-light">
@@ -83,7 +83,7 @@ $tomorrow = date("l, Y-m-d", strtotime("+2 day"));
 
             <div class="mb-3">
               <label class="form-label fw-bold" for="buktiTf">Upload Bukti Pembayaran</label>
-              <input hidden type="text" class="form-control" id="status" name="status" value="Bukti Terkirim">
+              <input hidden type="text" class="form-control" id="status" name="status" value="Bukti Terkirim - Menunggu Verifikasi">
               
               <input type="file" class="form-control" id="buktiTf" name="buktiTf">
             </div>

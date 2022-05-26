@@ -23,7 +23,7 @@
 
                 </div>
                 <div class="mt-3 d-flex justify-content-center">
-                    <a href="/traveltravel" class="btn btn-primary">Lihat Semua</a>
+                    <a href="/traveltravel" class="btn btn-primary" style=" border-radius: 0.5rem">Lihat Semua</a>
                 </div> 
     {{-- card close --}}
     @else
