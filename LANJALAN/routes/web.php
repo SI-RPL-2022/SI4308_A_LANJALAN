@@ -35,6 +35,7 @@ Route::resource('users', UserController::class);
 
 //admin -> wisata
 Route::get('/dashboard', [WisataController::class, 'dashboard']);
+Route::post('/dashboard/{id}', [WisataController::class, 'verifikasi'])->name('verifikasi');
 Route::get('/wisatapost', [WisataController::class, 'wisatapost']);
 Route::get('/detailwisata/{id}', [WisataController::class, 'wisatadetail']);
 Route::get('/wisatapost/{id}', [WisataController::class, 'deletewisata'])->name('deletewisata');

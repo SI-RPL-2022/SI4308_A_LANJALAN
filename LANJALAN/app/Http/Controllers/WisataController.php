@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\wisata;
+use App\Models\pesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,8 +13,18 @@ class WisataController extends Controller
     public function dashboard(){
         return view('dashboard.dash', [
             "title" => "Dashboard",
+            "pesanan" => pesanan::all(),
 
         ]);
+    }
+
+    public function verifikasi(Request $request, $id){
+            $pesans = pesanan::all();
+            $pesan = $pesans->find($id);
+            $pesan->status = $request->status;
+            $pesan->save();
+        return redirect('/dashboard')->with('success','Verifikasi berhasil.');
+
     }
 
     public function wisatapost(){
