@@ -26,7 +26,8 @@
         <th>Total Harga</th>
         <th>Bukti Transfer</th>
         <th>Status</th>
-        <th width="280px">Action</th>
+        <th></th>
+        <th></th>
     </tr>
     </thead>
     @php
@@ -40,26 +41,23 @@
         <td>{{ $p->noTelepon }}</td>
         <td>
             @if( $p->wisata == null)
-            <small class="text-secondary">Tidak Ada</small>
+            <small class="text-secondary">-</small>
             @else
             <small>{{ $p->wisata->namaWisata }}</small>
-            <img class="w-100" src="{{ asset('storage/' . $p->wisata->image)  }}">
             @endif
         </td>
         <td>
             @if( $p->bundle == null)
-            <small class="text-secondary">Tidak Ada</small>
+            <small class="text-secondary">-</small>
             @else
             <small>{{ $p->bundle->judulBundle }}</small>
-            <img class="w-100" src="{{ asset('storage/' . $p->bundle->image)  }}">
             @endif
         </td>
         <td>
             @if( $p->travel_agent == null)
-            <small class="text-secondary">Tidak Ada</small>
+            <small class="text-secondary">-</small>
             @else
             <small>{{ $p->travel_agent->name }}</small>
-            <img class="w-100" src="{{ asset('storage/' . $p->travel_agent->image)  }}">
             @endif
         </td>
         <td>{{ $p->tanggal }}</td>
@@ -84,8 +82,15 @@
                 @else
                 <a class="btn btn-info" href="/tiketpesanan/{{$p->id}}">Lihat Pesanan</a>
                 @endif
-
-                <a href="{{ route('deletepesanan', ['id' => $p->id]) }}" type="submit" class="btn btn-danger">Batalkan</a>
+        </td>
+        <td>
+            @if( $p->status == "Belum Kirim Bukti")
+                <form action="{{ route('verifikasi', $p->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+                <button class="btn btn-danger" type="submit" name="submit">Batalkan</button>
+                <input hidden type="text" class="form-control" id="status" name="status" value="Batal"></form>
+            @endif
         </td>
     </tr>
     @endforeach
