@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //travel agent
 Route::resource('bundles', BundleController::class);
+Route::get('/dashboardtravel', [WisataController::class, 'dashboardtravel']);
 Route::get('/bundle/{id}', [BundleController::class, 'deletebundle'])->name('deletebundle');
 
 //pemesanan

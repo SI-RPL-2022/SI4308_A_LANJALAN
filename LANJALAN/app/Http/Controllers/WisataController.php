@@ -18,6 +18,14 @@ class WisataController extends Controller
         ]);
     }
 
+    public function dashboardtravel(){
+        return view('dashboardtravel.dash', [
+            "title" => "Dashboard",
+            "pesanan" => pesanan::all(),
+
+        ]);
+    }
+
     public function verifikasi(Request $request, $id){
             $pesans = pesanan::all();
             $pesan = $pesans->find($id);

@@ -24,11 +24,6 @@
         <div class="d-flex">
             <ul class="navbar-nav mx-3">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('register') }}">
-                        <button type="button" class="btn btn-outline-primary" style="border-radius: 0.5rem">Register</button>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">
                         <button type="button" class="btn btn-outline-warning" style="border-radius: 0.5rem; ">Log in</button>
                     </a>
