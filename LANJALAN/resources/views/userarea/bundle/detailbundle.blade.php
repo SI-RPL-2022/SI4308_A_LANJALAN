@@ -41,7 +41,7 @@
                 </div>  
                 
                 <div class="d-grid my-5 shadow">
-                    <a  href="{{route('pesan', ['id' => $detailbundle->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailbundle->hargaBundle }}/<small>Orang</small></a>
+                    <a  href="{{route('showBundle', ['id' => $detailbundle->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailbundle->hargaBundle }}/<small>Orang</small></a>
                 </div>
             </form>
             {{-- <hr class="mt-5"> --}}
