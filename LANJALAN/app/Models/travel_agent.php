@@ -13,7 +13,14 @@ class travel_agent extends Model
     // protected $fillable = [
     //     'name', 'email', 'password','level','username'
     // ]; //ganti
-
+    
+    public function scopeFilter($query){
+        
+        if(request('search')){ 
+            return $query->where('name', 'like', '%' . request('search') . '%')
+            ->orWhere('username', 'like', '%' . request('search') . '%');
+        }
+    }
     public function wisata(){
         return $this->hasMany(wisata::class);
     }

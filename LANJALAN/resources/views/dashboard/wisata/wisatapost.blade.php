@@ -10,7 +10,7 @@
 <form action="/wisatapost" method="GET">
         <div class="d-flex mb-3">
             <div class=" w-50 input-group">
-                <input type="search" name="search" class="form-control" placeholder="Cari Wisata atau lokasi yang kamu mau!" value="{{ request('search') }}">
+                <input type="search" name="search" class="form-control" placeholder="Cari Wisata atau lokasi" value="{{ request('search') }}">
                 <button type="submit" class="btn btn-success">Search</button>
             </div>
         </div>

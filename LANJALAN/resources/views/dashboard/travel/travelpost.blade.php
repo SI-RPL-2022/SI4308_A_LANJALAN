@@ -11,6 +11,14 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+    <form action="/travelpost" method="GET">
+        <div class="d-flex mb-3">
+            <div class=" w-50 input-group">
+                <input type="search" name="search" class="form-control" placeholder="Cari nama atau username" value="{{ request('search') }}">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </div>
+</form>
     @if ($travelagentpost->count())
     {{-- table --}}
     @php

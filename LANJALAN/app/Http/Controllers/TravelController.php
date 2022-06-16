@@ -13,7 +13,7 @@ class TravelController extends Controller
     public function travelpost(){
         return view('dashboard.travel.travelpost', [
             "title" => "Travel Agent",
-            "travelagentpost" => travel_agent::paginate(8)->withQueryString()
+            "travelagentpost" => travel_agent::latest()->filter(request(['search']))->paginate(8)->withQueryString()
 
         ]);
     }
