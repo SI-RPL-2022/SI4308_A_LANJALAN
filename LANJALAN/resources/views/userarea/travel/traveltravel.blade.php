@@ -20,7 +20,7 @@
                     @foreach ($travelagentpost as $p)
                         
                     <div class="mx-2 my-2">
-                        <a href="/detailwisata/{{ $p->id }}" class="text-decoration-none link-dark">
+                        <a href="/traveluserdetail/{{ $p->id }}" class="text-decoration-none link-dark">
                             <div class="card border-0" style="width: 14rem;">
                                 <img src="{{ asset('storage/' . $p->image)  }}" class="card-img-top  imgcard" alt="">
                                 <div class="pt-2">

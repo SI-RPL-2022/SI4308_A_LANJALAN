@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\travel_agent;
+use App\Models\wisata;
+use App\Models\bundle;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
@@ -77,6 +79,16 @@ class TravelController extends Controller
             "title" => "Travel Travel",
             "travelagentpost" => travel_agent::latest()->filter(request(['search']))->paginate(8)->withQueryString()
 
+        ]);
+    }
+    public function traveluserdetail($id){
+
+        return view('userarea.travel.detailtravel', [
+            "title" => "Detail Travel",
+            "detailtravel" => travel_agent::find($id),
+            "traveltravel" => travel_agent::paginate(4)->withQueryString(),
+            "wisatas" => wisata::paginate(4)->withQueryString()
+    
         ]);
     }
     
