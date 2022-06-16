@@ -23,15 +23,11 @@
                 </div>
             </div>
         </div>    
-            
             </form>
-            {{-- <hr class="mt-5"> --}}
             <div class="bg-white p-3 rounded shadow ">
                 <div>
                     <h4 class="fw-bold mt-4 text-center">Travel Lainnya</h4>
                 </div>
-            
-    {{-- card --}}
                 <div class="flex-wrap justify-content-center d-flex py-3">
                     @foreach ($traveltravel as $p)
                         
@@ -50,17 +46,13 @@
 
                 </div>
                 <div class="mt-3  d-flex justify-content-center">
-                    {{ $wisatas->links('pagination::bootstrap-4') }}   
+                    {{ $traveltravel->links('pagination::bootstrap-4') }}   
                 </div> 
-    {{-- card close --}}
-
-
             <div class="bg-white p-3 rounded shadow ">
                 <div>
                     <h4 class="fw-bold mt-4 text-center">Wisata Lainnya</h4>
                 </div>
             
-    {{-- card --}}
                 <div class="flex-wrap justify-content-center d-flex py-3">
                     @foreach ($wisatas as $p)
                         
