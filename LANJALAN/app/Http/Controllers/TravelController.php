@@ -75,7 +75,7 @@ class TravelController extends Controller
 
         return view('userarea.travel.traveltravel', [
             "title" => "Travel Travel",
-            "travelagentpost" => travel_agent::paginate(8)->withQueryString()
+            "travelagentpost" => travel_agent::latest()->filter(request(['search']))->paginate(8)->withQueryString()
 
         ]);
     }
