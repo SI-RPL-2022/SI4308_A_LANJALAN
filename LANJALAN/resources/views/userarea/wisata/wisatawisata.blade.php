@@ -5,6 +5,14 @@
 <div class="container py-5 my-2">
     <h3 class="text-center p-1">Wisata</h3>
     <p class="text-secondary px-5 text-center">Pergi ke wisata paling populer di Indonesia dimanapun yang kamu mau!</p>
+    <form action="/wisatawisata" method="GET">
+        <div class="d-flex justify-content-center mb-3">
+            <div class=" w-50 input-group">
+                <input type="search" name="search" class="form-control" placeholder="Cari Wisata atau lokasi yang kamu mau!" value="{{ request('search') }}">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </div>
+    </form> 
     @if ($wisatas->count())
     {{-- card --}}
                 <div class="flex-wrap justify-content-center d-flex py-3">

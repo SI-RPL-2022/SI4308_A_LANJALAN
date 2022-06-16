@@ -160,7 +160,7 @@ class WisataController extends Controller
 
         return view('userarea.wisata.wisatawisata', [
             "title" => "Wisata Wisata",
-            "wisatas" => wisata::paginate(12)->withQueryString()
+            "wisatas" => wisata::latest()->filter(request(['search']))->paginate(12)->withQueryString()
 
         ]);
     }

@@ -12,6 +12,13 @@ class wisata extends Model
 
     protected $guarded = ['id'];
     // protected $primaryKey = ['id'];
+    public function scopeFilter($query){
+        
+        if(request('search')){ 
+            return $query->where('namaWisata', 'like', '%' . request('search') . '%')
+            ->orWhere('lokasiWisata', 'like', '%' . request('search') . '%');
+        }
+    }
 
     public function pesanan(){
         return $this->hasMany(pesanan::class);
