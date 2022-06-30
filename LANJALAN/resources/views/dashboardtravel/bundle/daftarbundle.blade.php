@@ -62,6 +62,7 @@ $i=0;
         @endforeach
     </table>
     @endif
+    
     <div class="row text-center">
         {!! $bundles->links() !!}
     </div>
