@@ -88,5 +88,7 @@ Route::get('/wisatawisata', [WisataController::class, 'wisatawisata']);
 Route::get('/bundleuser/{id}', [BundleController::class, 'bundleuser']);
 Route::get('/bundlebundle', [BundleController::class, 'bundlebundle']);
 Route::get('/traveltravel', [TravelController::class, 'traveltravel']);
+Route::get('/traveluserdetail/{id}', [TravelController::class, 'traveluserdetail']);
+
 //detailtravelnanti disini -----------------
 

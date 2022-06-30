@@ -38,7 +38,7 @@ class WisataController extends Controller
     public function wisatapost(){
         return view('dashboard.wisata.wisatapost', [
             "title" => "Wisata Post",
-            "wisatas" => wisata::paginate(8)->withQueryString()
+            "wisatas" => wisata::latest()->filter(request(['search']))->paginate(8)->withQueryString()
 
         ]);
     }
@@ -160,7 +160,7 @@ class WisataController extends Controller
 
         return view('userarea.wisata.wisatawisata', [
             "title" => "Wisata Wisata",
-            "wisatas" => wisata::paginate(12)->withQueryString()
+            "wisatas" => wisata::latest()->filter(request(['search']))->paginate(12)->withQueryString()
 
         ]);
     }
