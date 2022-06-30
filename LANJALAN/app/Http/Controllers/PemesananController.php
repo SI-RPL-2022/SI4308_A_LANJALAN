@@ -225,4 +225,22 @@ class PemesananController extends Controller
             return redirect('/riwayatpesanan')->with('success','Reschedule berhasil diajukan.');
         
     }
+    public function bataluser($id, Request $request )
+    {
+     
+            $pesans = pesanan::all();
+            $pesan = $pesans->find($id);
+            // $pesan = $pesanan;
+            $pesan->status = $request->status;
+            // $pesan->travel_agent_id = $request->travel_agent_id;
+            $pesan->save();
+            // $request->validate([
+            //     'status' => 'required',
+            //     'tanggal' => 'required',
+            // ]);
+            
+            // $pesanan->update($request->all());
+            return redirect('/riwayatpesanan')->with('warning','Pesanan Telah Dibatalkan.');
+        
+    }
 }

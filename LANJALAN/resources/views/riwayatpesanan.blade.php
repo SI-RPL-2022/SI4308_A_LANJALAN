@@ -3,11 +3,15 @@
 @section('container')
 <div class="p-5 my-5 mx-3">
 <div class="bg-success rounded-2 text-center py-2">
-    <h2 class="fw-bold text-light">Daftar Riwayat Pesanan</h2>
+    <h2 class="fw-bold text-light">Pesanan</h2>
 </div>
-
+<br>
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+@elseif ($message = Session::get('warning'))
+    <div class="alert alert-warning">
         <p>{{ $message }}</p>
     </div>
 @endif
@@ -85,7 +89,7 @@
         </td>
         <td>
             @if( $p->status == "Belum Kirim Bukti")
-                <form action="{{ route('verifikasi', $p->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('bataluser', $p->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <button class="btn btn-danger" type="submit" name="submit">Batalkan</button>

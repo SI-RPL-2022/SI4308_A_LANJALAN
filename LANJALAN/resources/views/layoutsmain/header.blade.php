@@ -25,7 +25,7 @@
             <ul class="navbar-nav mx-3">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">
-                        <button type="button" class="btn btn-outline-warning" style="border-radius: 0.5rem; ">Log in</button>
+                        <button type="button" class="btn btn-outline-warning" style="border-radius: 0.5rem; ">Admin / Mitra</button>
                     </a>
                 </li>
             </ul>

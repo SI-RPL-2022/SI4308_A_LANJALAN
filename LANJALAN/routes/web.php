@@ -72,6 +72,7 @@ Route::get('/bundle/{id}', [BundleController::class, 'deletebundle'])->name('del
 Route::get('/pesan/{id}', [PemesananController::class, 'show'])->name('pesan');
 Route::resource('pemesanan', PemesananController::class); //pesan Wisata dan update 
 Route::get('/konfirmasi/{id}', [PemesananController::class, 'konfirmasi'])->name('konfirmasi');
+Route::post('/batalkanpesanan/{id}', [PemesananController::class, 'bataluser'])->name('bataluser');
 Route::get('/riwayatpesanan', [PemesananController::class, 'riwayatpesanan']);
 Route::get('/riwayatpesanan/{id}', [PemesananController::class, 'deletepesanan'])->name('deletepesanan');
 Route::get('/pesanBundle/{id}', [PemesananController::class, 'showBundle'])->name('showBundle'); //show pesan bundle

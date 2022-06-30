@@ -101,6 +101,20 @@
                     <button class="btn btn-danger" type="submit" name="submit">Tolak</button>
                     <input hidden type="text" class="form-control" id="status" name="status" value="Pembelian Gagal"></form>
                 </td>
+                @elseif( $p->status == "mengajukan reschedule")
+                <td>
+                <form action="{{ route('verifikasi', $p->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('POST')
+                    <button class="btn btn-warning" type="submit" name="submit">Verifikasi</button>
+                    <input hidden type="text" class="form-control" id="status" name="status" value="Telah Diverifikasi"></form></td>
+                <td>
+                <form action="{{ route('verifikasi', $p->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('POST')
+                    <button class="btn btn-danger" type="submit" name="submit">Tolak</button>
+                    <input hidden type="text" class="form-control" id="status" name="status" value="Reshedule Gagal"></form>
+                </td>
                 @else
                 <td>        </td>
             @endif         
