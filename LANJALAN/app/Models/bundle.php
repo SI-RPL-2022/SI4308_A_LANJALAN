@@ -14,6 +14,13 @@ class bundle extends Model
     //     'judulBundle', 'hargaBundle', 'deskripsiBundle', 'tanggalExpBundle'
     // ]; //ganti
 
+    public function scopeFilter($query){
+        
+        if(request('search')){ 
+            return $query->where('judulBundle', 'like', '%' . request('search') . '%');
+        }
+    }
+
     public function wisata(){
         return $this->hasMany(wisata::class);
     }

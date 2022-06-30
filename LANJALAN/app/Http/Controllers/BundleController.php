@@ -11,10 +11,11 @@ class BundleController extends Controller
 {
     public function index()
     {
-        $bundles = bundle::paginate(10);
-      
-        return view('dashboardtravel.bundle.daftarbundle',compact('bundles'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('dashboardtravel.bundle.daftarbundle', [
+            "title" => "Daftar Bundle",
+            "bundles" => bundle::latest()->filter(request(['search']))->paginate(8)->withQueryString()
+
+        ]);
     }
 
     public function create()

@@ -4,19 +4,33 @@
 <div class="row mt-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-start">
-                <h2>Daftar Tiket Bundle</h2>
+                <h2>Daftar Bundle</h2>
             </div>
             <div class="float-end">
                 <a class="btn btn-success" href="{{ route('bundles.create') }}"> Tambah Tiket Bundle Baru</a>
             </div>
         </div>
     </div>
+
+    <form action="/bundles" method="GET">
+        <div class="d-flex mb-3">
+            <div class=" w-50 input-group">
+                <input type="search" name="search" class="form-control" placeholder="Cari Paket Bundle" value="{{ request('search') }}">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </div>
+</form>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
+ @if ($bundles->count())
+{{-- table --}}
+@php
+$i=0;    
+@endphp
    
     <table class="table table-bordered">
         <tr>
@@ -47,6 +61,7 @@
         </tr>
         @endforeach
     </table>
+    @endif
     <div class="row text-center">
         {!! $bundles->links() !!}
     </div>
