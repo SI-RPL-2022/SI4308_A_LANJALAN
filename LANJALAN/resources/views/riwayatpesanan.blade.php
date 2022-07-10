@@ -82,9 +82,9 @@
         </td>
         <td>
                 @if( $p->status == "Belum Kirim Bukti")
-                <a class="btn btn-warning" href="/konfirmasi/{{$p->id}}">Pembayaran</a>
+                <a dusk="bayar1" class="btn btn-warning" href="/konfirmasi/{{$p->id}}">Pembayaran</a>
                 @else
-                <a class="btn btn-info" href="/tiketpesanan/{{$p->id}}">Lihat Pesanan</a>
+                <a dusk="lihatpesanan1" class="btn btn-info" href="/tiketpesanan/{{$p->id}}">Lihat Pesanan</a>
                 @endif
         </td>
         <td>

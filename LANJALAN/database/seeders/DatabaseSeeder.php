@@ -112,34 +112,7 @@ class DatabaseSeeder extends Seeder
         ]);
         //bundles close-------------------------------------------------------------
 
-        //pesanans -------------------------------------------------------------
-        DB::table('pesanans')->insert([
-            'wisata_id' => 1,
-            'bundle_id' => null,
-            'totalHarga' => '100000',
-            'namaPemesan' => 'Karisma Nabil',
-            'noTelepon' => '+6281252787166',
-            'emailPemesan' => 'kharismanabil@gmail.com',
-            'buktiTf' => 'Belum Ada Foto',
-            'status' => 'Belum Kirim Bukti',
-            'tanggal' => '2022-04-06',
-            'travel_agent_id' => 1,
-        ]);
-
-        DB::table('pesanans')->insert([
-            'wisata_id' => null,
-            'bundle_id' => 3,
-            'totalHarga' => '100000',
-            'namaPemesan' => 'Nabel',
-            'noTelepon' => '+628125525252',
-            'emailPemesan' => 'Nabeel@gmail.com',
-            'buktiTf' => 'Belum Ada Foto',
-            'status' => 'Belum Kirim Bukti',
-            'tanggal' => '2022-04-05',
-            'travel_agent_id' => 3,
-        ]);
-        //pesanans close-------------------------------------------------------------
-        
+       
         //wisata
         DB::table('wisatas')->insert([
             'namaWisata' => 'Pantai Papuma',

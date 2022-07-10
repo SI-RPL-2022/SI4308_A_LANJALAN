@@ -42,7 +42,7 @@
                 </div>  
                 
                 <div class="d-grid my-5 shadow">
-                    <a  href="{{route('pesan', ['id' => $detailwisata->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailwisata->hargaWisata }}/<small>Orang</small></a>
+                    <a dusk="pesan1" href="{{route('pesan', ['id' => $detailwisata->id])}}" class="btn btn-success ">Pesan Sekarang - Rp{{ $detailwisata->hargaWisata }}/<small>Orang</small></a>
                 </div>
             </form>
             {{-- <hr class="mt-5"> --}}

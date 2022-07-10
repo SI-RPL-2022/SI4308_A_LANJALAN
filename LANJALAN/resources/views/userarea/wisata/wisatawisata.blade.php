@@ -18,7 +18,7 @@
                 <div class="flex-wrap justify-content-center d-flex py-3">
                     @foreach ($wisatas as $p)
                         
-                    <div class="mx-2 my-2">
+                    <div dusk="wisata-card" class="mx-2 my-2">
                         <a href="/wisatadetail/{{ $p->id }}" class="text-decoration-none link-dark">
                             <div class="card border-0" style="width: 14rem;">
                                 <img src="{{ asset('storage/' . $p->image)  }}" class="card-img-top  imgcard" alt="">
